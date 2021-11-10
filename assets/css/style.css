@@ -961,6 +961,34 @@ body {
   block-size:250px;
 }
 
+.team-img .paypal{
+  width:50%;
+  height:50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-img .mastercard{
+  width:102%;
+  height:102%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-img .visa{
+  width:102%;
+  height:102%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-img .banktransfer{
+  width:57%;
+  height:57%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .team-img > a::after {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 50px 50px 30px 5px; 
