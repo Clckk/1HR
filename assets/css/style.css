@@ -895,7 +895,7 @@ body {
 }
 
 
-.services-background-title {
+.services-background-title h2{
   color:white;
   font-size: 45px;
   background-color:black;
