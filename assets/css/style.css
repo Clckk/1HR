@@ -52,7 +52,7 @@ p {
 h1, h2, h3, h4, h5, h6, h7 {
   font-family: 'Raleway', sans-serif;
   margin: 4px 0px 15px;
-  color: #444;
+  color: rgb(243, 243, 243);
   font-weight: 500;
 }
 
@@ -133,12 +133,15 @@ body {
 }
 
 .section-headline-payment h2 {
+  color: rgb(240, 240, 240); 
   display: inline-block;
   font-size: 40px;
   font-weight: 600;
   margin-bottom: 30px;
   position: relative;
   text-transform: capitalize;
+  text-shadow: 5px 4px 4px black; 
+  text-shadow: -1px -1px 6 #000, 1px -1px 1 rgb(0, 0, 0), 2px 2px 2 #000, 1px 6px 6 #000;
 }
 
 
@@ -152,7 +155,7 @@ body {
 }
 
 /*--------------------------------------------------------------
-# Back to top button
+# Back to top button and preloader
 --------------------------------------------------------------*/
 .back-to-top {
   position: fixed;
@@ -230,7 +233,7 @@ div#preloader {
 }
 
 .section-headline h2::after {
-  border: 1px solid white;
+  border: 1px solid rgb(226, 226, 226); /*to ta kreska*/
   bottom: -20px;
   content: "";
   left: 0;
@@ -627,10 +630,14 @@ body {
   width: 100%;
   height: auto;
   position: relative;
+  border-radius: 25px; 
+  border: 5px solid;
+  border-color: black;
+  padding:10px;
 }
 
 .about-area {
-  background-color: #f9f9f9;
+  background: url(../img/background/berlin.jpg);
 }
 
 .single-well > a {
@@ -837,11 +844,20 @@ body {
 /*--------------------------------------------------------------
 # How to make a purchase
 --------------------------------------------------------------*/
-
-
+.services-area{
+  background: url(../img/background/himmel.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-top: -45px;
+  margin-bottom: 45px;
+}
 
 .section-headline.services-head > h2 {
-  margin-bottom: 25px;
+  color: rgb(238, 238, 238);
+  margin-bottom: 5px;
+  margin-top: 65px;
 }
 
 .services-details {
@@ -862,10 +878,39 @@ body {
 }
 
 .single-services > h4 {  /* h4 jest uzywane */
-  
-  color: #444;
+  color: rgb(197, 194, 194);
+  text-shadow: 5px 4px 4px black; 
+  text-shadow: -1px -1px 6 #000, 1px -1px 1 rgb(0, 0, 0), 2px 2px 2 #000, 1px 6px 6 #000;
+  font-family: 'Work Sans', sans-serif;
   font-size: 24px;
   font-weight: 500;
+}
+
+.single-services p {  /* h4 jest uzywane */
+  color: rgb(226, 225, 225);
+  text-shadow: 5px 4px 4px black; 
+  text-shadow: 5px 5px 6px #000, 1px -1px 1 rgb(0, 0, 0), 2px 2px 2 #000, 1px 6px 6 #000;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+.services-background-title {
+  color:white;
+  font-size: 45px;
+  background-color:black;
+  background:rgba(0,0,0,0.6);
+  padding:20px;
+	border-radius: 10px;
+}
+
+.services-background{
+  color:white;
+  font-size: 20px;
+  background-color:black;
+  background:rgba(0,0,0,0.6);
+  padding:20px;
+	border-radius: 10px;
 }
 
 .centrujnumer {
@@ -879,7 +924,14 @@ body {
 # Payment methods - oryginalnie mial byc team
 --------------------------------------------------------------*/
 
-
+.payment-area{
+    background: url(../img/background/winter.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: -45px;
+}
 
 .team-member:hover.team-member::before {
   transform: scale(1.2);
@@ -960,10 +1012,13 @@ body {
 
 .team-content {
   padding: 10px 0px;
+  text-shadow: 5px 4px 4px black; 
+  text-shadow: -1px -1px 6 #000, 1px -1px 1 rgb(0, 0, 0), 2px 2px 2 #000, 1px 6px 6 #000;
 }
 
 .team-content > h4, .team-content > p {
-  color: #444;
+  font-family: 'Work Sans', sans-serif;
+  color: rgb(235, 235, 235);
   margin-bottom: 5px;
 }
 
@@ -1032,7 +1087,11 @@ body {
 }
 
 .contact-left-text {
-  background: #3EC1D5 none repeat scroll 0 0;
+  background: url(../img/about/bat.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .contact-right-text {
@@ -1064,6 +1123,19 @@ body {
 /*--------------------------------------------------------------
 # FAQ
 --------------------------------------------------------------*/
+
+.faq-area{
+  background: url(../img/background/grille.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.faq-area p{
+  color: rgb(255, 240, 240);
+  font-family: 'Hind', sans-serif; 
+}
 
 
 body {
@@ -1171,7 +1243,7 @@ body {
   will-change: opacity, max-height;
   text-align:center;
   color:white;
-    text-shadow: 5px 4px 4px rgb(7, 99, 136); 
+    text-shadow: 5px 4px 4px rgb(0, 0, 0); 
     text-shadow: -1px -1px 1 #000, 1px -1px 1 rgb(0, 0, 0), 2px 2px 2 #000, 1px 6px 6 #000;
 }
 .accordion .accordion-content p {
@@ -1376,7 +1448,6 @@ center {
 /*--------------------------------------------------------------
 # Scrollbar
 --------------------------------------------------------------*/
-
 
 /* width */
 ::-webkit-scrollbar {
