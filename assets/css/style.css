@@ -154,6 +154,10 @@ body {
   text-shadow: -1px -1px 6 #000, 1px -1px 1 rgb(0, 0, 0), 2px 2px 2 #000, 1px 6px 6 #000;
 }
 
+.row {
+  padding-right: calc(var(--bs-gutter-x)/ -30);
+}
+
 /*--------------------------------------------------------------
 # Back to top button and preloader
 --------------------------------------------------------------*/
@@ -637,7 +641,11 @@ body {
 }
 
 .about-area {
-  background: url(../img/background/berlin.jpg);
+  background: url(../img/background/berlin.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .single-well > a {
@@ -954,44 +962,45 @@ body {
 
 .team-img {
   position: relative;
+  padding: 30px;
+  margin-top: 20px;
 }
 
 .team-img > a {
-  display: block;
+  display: flex;
   block-size:250px;
+  align-items: center;
+  max-width: 60%;
 }
 
 .team-img .paypal{
-  width:50%;
-  height:50%;
+  
+  flex: 1;
   margin-left: auto;
   margin-right: auto;
 }
 
 .team-img .mastercard{
-  width:102%;
-  height:102%;
+  flex:1;
   margin-left: auto;
   margin-right: auto;
 }
 
 .team-img .visa{
-  width:102%;
-  height:102%;
+  flex:1;
   margin-left: auto;
   margin-right: auto;
 }
 
 .team-img .banktransfer{
-  width:57%;
-  height:57%;
+  flex:1;
   margin-left: auto;
   margin-right: auto;
 }
 
 .team-img > a::after {
   background: rgba(0, 0, 0, 0.7);
-  border-radius: 50px 50px 30px 5px; 
+  border-radius: 50px 50px 30px 30px; 
   bottom: 0;
   content: "";
   height: 100%;
@@ -1215,13 +1224,12 @@ body {
   border: 1px solid #03b5d2;
 }
 
-.accordion button .accordion-title {
-  padding: 1em 1.5em 1em 0;
-}
+
 
 .accordion button .icon {
   display: inline-block;
   position: absolute;
+  margin-left: 30px;
   top: 18px;
   left: 10;
   width: 22px;
