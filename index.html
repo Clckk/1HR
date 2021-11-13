@@ -56,22 +56,32 @@
       
       <nav id="navbar" class="navbar">
         <ul class="navi">
-          <li><a href="credits.html">Credits + exp</a></li>
-          <li><a href="ranked-battels.html">Ranked Battles</a></li>          
-          <li><a href="index.html#team">Payment methods</a></li>
+          <li id="creditsexp"><a href="credits.html">Credits + exp</a></li>
+          <li id="rankedbattles"><a href="ranked-battels.html">Ranked Battles</a></li>          
+          <li id="paymentmethods"><a href="index.html#team">Payment methods</a></li>
           <li id="faq"><a href="index.html#pricing">FAQ</a></li>
           <li id="others"><a href="workingprogres.html">Others</a></li>
           
         </ul>
 			
+			
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 
-		
-<i class="bi bi-list mobile-nav-toggle"></i>
 
-
-		
-        
       </nav><!-- .navbar -->
+
+
+      <script>
+        function myFunction() {
+          var x = document.getElementById("navbar");
+          if (x.className === "navbar") {
+            x.className += " responsive";
+          } else {
+            x.className = "navbar";
+          }
+        }
+        </script>
+
 
     </div>
   </header><!-- End Header -->
@@ -702,7 +712,7 @@
           <!-- end single footer -->
           <div class="col-md-4">
             
-              <div class="footer-head">
+              <div class="footer-head footer-marginleft">
                 <h4>contact information</h4>
                 <p>
                   All orders outside of our business hours are processed on the following day.
