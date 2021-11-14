@@ -88,7 +88,27 @@
       window.addEventListener('load', headerScrolled)
       onscroll(document, headerScrolled)
     }
-  
+
+
+        /**
+     * Toggle .navbar-scrolled class to #navbar when page is scrolled
+     */
+         let selectNavbar = select('#navbar')
+         if (selectNavbar) {
+           const navbarScrolled = () => {
+             if (window.scrollY > 100) {
+               selectNavbar.classList.add('navbar-scrolled')
+             } else {
+               selectNavbar.classList.remove('navbar-scrolled')
+             }
+           }
+           window.addEventListener('load', navbarScrolled)
+           onscroll(document, navbarScrolled)
+         }
+       
+
+
+
     /**
      * Back to top button
      */

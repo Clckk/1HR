@@ -559,8 +559,6 @@ div#preloader {
     padding: 15px 30px 22px 30px;
   }
 
-  
-
   .navbar.responsive .dropdown {float: none;}
   .navbar.responsive .dropdown-content {position: relative;}
   .navbar.responsive .dropdown .dropbtn {
@@ -595,6 +593,26 @@ div#preloader {
   width:50%;
 }
 
+/*animacja on scroll*/
+
+#header .navbar.responsive{
+  transition: all 0.5s;
+  z-index: 997;
+  transition: all 0.5s;  
+}
+
+#header.header-scrolled .navbar.responsive{
+  margin-top:74px;
+}
+
+#header.header-scrolled .navbar.responsive .icon{
+  margin-top:-3px;
+}
+
+#header .navbar.responsive {
+  max-height: 300px;
+}
+
 
 /*--------------------------------------------------------------
 # About
@@ -627,6 +645,10 @@ div#preloader {
 
 .about ul{
   align-items: center;
+}
+
+#about .about-background ul{
+  margin-right: 32px;
 }
 
 .single-well > a {
@@ -907,6 +929,10 @@ div#preloader {
   left: 50%;
   margin-right: 50%;
   transform: translate(32%, -15%)
+}
+
+.services.container {
+  margin-bottom:50px;
 }
 
 /*--------------------------------------------------------------
