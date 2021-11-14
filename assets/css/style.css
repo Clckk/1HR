@@ -1230,9 +1230,8 @@ body {
 
 .accordion button .icon {
   display: inline-block;
-  position: absolute;
-  margin-left: 30px;
-  top: 18px;
+  position: relative;
+  top: 3px;
   left: 10;
   width: 22px;
   height: 22px;
@@ -1242,23 +1241,23 @@ body {
 
 .accordion button .icon::before {
   display: block;
-  position: absolute;
   content: '';
   top: 9px;
   left: 5px;
   width: 10px;
   height: 2px;
   background: currentColor;
+  margin: 9px 5px;
 }
 .accordion button .icon::after {
   display: block;
-  position: absolute;
   content: '';
   top: 5px;
   left: 9px;
   width: 2px;
   height: 10px;
   background: currentColor;
+  margin: -15px 9px;
 }
 
 .accordion button[aria-expanded='true'] {
@@ -1291,6 +1290,10 @@ body {
   position: relative;
   left:10%;
   text-align: center;
+}
+
+.accordion-title {
+  margin-left:10px;
 }
 
 /*--------------------------------------------------------------
