@@ -1,122 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+ <!-- Bootstrap -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
 
-  <title>1HR.boosting.pro</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+ <!-- Google Fonts -->
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Lato:wght@900&family=Work+Sans:wght@900&display=swap" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+ <!-- Vendor CSS Files -->
+ <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+ <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+ 
+ <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> <!-- ? -->
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+ <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+ <!-- Template Main CSS File -->
+ <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: eBusiness - v4.0.1
-  * Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
-
+  <div>
+    <video autoplay loop muted fixed class="video-background">
+      <source src="particles.mp4" type="video/mp4">
+    </video>
+  </div>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex justify-content-between">
+  <header id="header" class="fixed-top" style="border-bottom-style:dashed;">
+    <div class="d-flex justify-content-sm-center">
 
       <div class="logo">
-        <h1><a href="index.html"><img src="assets\img\logo\1hrAdressBlack.png" alt="1hr.pro"></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <h1><a href="index.html" style="margin-right:50px;"><img src="assets\img\logo\1hrAdressBlack.png" alt="1hr.pro"></a></h1>
+        
       </div>
 
+      
       <nav id="navbar" class="navbar">
         <ul class="navi">
-          <li><a href="#">Credits + exp</a></li>
-          <li><a href="personal-missions.html">Personal Missions</a></li>
-		  <li class="dropdown"><a href="#"><span><b>Events</b></span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Frontlines</a></li>
-              <li class="dropdown"><a href="ranked-battels.html"><span>Ranked Battels</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">cos1</a></li>
-                  <li><a href="#">cos2</a></li>
-                  <li><a href="#">cos3</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Steel Hunter</a></li>
-              <li><a href="#">The Last Waffentrager</a></li>
-            </ul>
-          </li>
-          <li><a href="#team">Custom Bundles</a></li>
-          <li><a href="#blog">WN8 + winrate Boost</a></li>
-		  <li><a href="#blog">MoE (Gun Marks)</a></li>
-
-          <li><a href="#contact">Others</a></li>
-			  
+          <li id="creditsexp"><a href="credits.html">Credits + exp</a></li>
+          <li id="rankedbattles"><a href="ranked-battels.html">Ranked Battles</a></li>          
+          <li id="paymentmethods"><a href="index.html#team">Payment methods</a></li>
+          <li id="faq"><a href="index.html#pricing">FAQ</a></li>
+          <li id="others"><a href="workingprogres.html">Others</a></li>
+          
         </ul>
 			
-			<span class="submenu">
 			
- 
-							<a href="#" target="_blank"><img src="img/cart.png" class="carter" id="img-carrito"><span class="badge" id="count"><span id="count-cart">X</span></span></a>
-							<div id="carrito">
-							<div class="scrollbar" id="style-1">
-							<div class="force-overflow">
-								<table id="lista-carrito" class="u-full-width">
-								  <thead>
-									<tr>
-									   <span class="cart-header"><b>Total Price: </b>
-									   $<span id="total-cart"></span></span>
-									</tr>
-									<tr>
-									  <th>Name</th>
-									  <th>Amount</th>
-									  <th>Price</th>
-									  <th></th>
-									  <th></th>
-									  <th></th>
-									</tr>	
-								  </thead>
-								  <tbody id="show-cart">
-								  </tbody>
-								</table>
-								<input type="button" class="pot" id="clear-cart" value="Clear Cart"></input>
-								<a href="#"><input class="checkout" type="button" value="Cheakout"></input></a>
-							</div>
-					</div>
-					</div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 
-			</span>
-		<i class="bi bi-list mobile-nav-toggle"></i>
-        
+
       </nav><!-- .navbar -->
+
+
+      <script>
+        function myFunction() {
+          var x = document.getElementById("navbar");
+          if (x.className === "navbar") {
+            x.className += " responsive";
+          } else {
+            x.className = "navbar";
+          }
+        }
+        </script>
+
 
     </div>
   </header><!-- End Header -->
+  
 
   
   <main id="main">
 
     <!-- ======= Portfolio Section ======= -->
     <div id="portfolio" class="portfolio-area area-padding fix">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -151,7 +113,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\2unicum.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 2 Million Credits 55 000 EXP 24 Hours - Super Unicum</div>
+                      <div class="oferta"></div>
                       <span>$8.99</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 2 Million Credits 55 000 EXP 24 Hours - Super Unicum" data-price="8.99">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -170,7 +132,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\5normal.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 5 Million Credits 125 000 EXP 24 Hours - Unicum</div>
+                      <div class="oferta"></div>
                       <span>$1,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 5 Million Credits 125 000 EXP 24 Hours - Unicum" data-price="1.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -189,7 +151,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\5unicum.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 5 Million Credits 125 000 EXP 24 Hours - Super Unicum</div>
+                      <div class="oferta"></div>
                       <span>$1,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 5 Million Credits 125 000 EXP 24 Hours - Super Unicum" data-price="1.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -208,7 +170,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\6.3normal.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 6.3 Million Credits 150 000 EXP 48 Hours - Unicum</div>
+                      <div class="oferta"></div>
                       <span>$20,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 6.3 Million Credits 150 000 EXP 48 Hours - Unicum" data-price="20.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -227,7 +189,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\6.3unicum.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 6.3 Million Credits 150 000 EXP 48 Hours - Super Unicum</div>
+                      <div class="oferta"></div>
                       <span>$79,99</span><br>
 					 <a class="add-to-cart" href="#" data-name="World of Tanks - 6.3 Million Credits 150 000 EXP 48 Hours - Super Unicum" data-price="79.99">Add to cart</a><br>
 					 <a class="more-info" href="#">For more info </a>
@@ -246,7 +208,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\10normal.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 10 Million Credits 225 000 EXP 2-3 Days - Unicum</div>
+                      <div class="oferta"></div>
                       <span>$1,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 10 Million Credits 225 000 EXP 2-3 Days - Unicum" data-price="1.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -265,7 +227,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\10unicum.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 10 Million Credits 225 000 EXP 2-3 Days - Super Unicum</div>
+                      <div class="oferta"></div>
                       <span>$1,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 10 Million Credits 225 000 EXP 2-3 Days - Super Unicum" data-price="1.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -284,7 +246,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\16normal.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 16 Million Credits 390 000 EXP 3-4 Days - Unicum</div>
+                      <div class="oferta"></div>
                       <span>$1,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 16 Million Credits 390 000 EXP 3-4 Days - Unicum" data-price="1.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -303,7 +265,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\16unicum.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 16 Million Credits 390 000 EXP 3-4 Days - Super Unicum</div>
+                      <div class="oferta"></div>
                       <span>$1,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 16 Million Credits 390 000 EXP 3-4 Days - Super Unicum" data-price="1.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -322,7 +284,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\21normal.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 21 Million Credits 515 000 EXP 4-5 Days - Unicum</div>
+                      <div class="oferta"></div>
                       <span>$1,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 21 Million Credits 515 000 EXP 4-5 Days - Unicum" data-price="1.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -341,7 +303,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\21unicum.jpg" alt="" /></a>
                 <div class="add-actions text-center text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 21 Million Credits 515 000 EXP 4-5 Days - Super Unicum</div>
+                      <div class="oferta"></div>
                       <span>$10,19</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 21 Million Credits 515 000 EXP 4-5 Days - Super Unicum" data-price="10.19">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -360,7 +322,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\30normal.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 30 Million Credits 750 000 EXP 6-7 Days - Unicum</div>
+                      <div class="oferta"></div>
                       <span>$1,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 30 Million Credits 750 000 EXP 6-7 Days - Unicum" data-price="1.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -379,7 +341,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\30unicum.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 30 Million Credits 750 000 EXP 6-7 Days - Super Unicum</div>
+                      <div class="oferta"></div>
                       <span>$1,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 30 Million Credits 750 000 EXP 6-7 Days - Super Unicum" data-price="1.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -398,7 +360,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\50normal.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 50 Million Credits 1 300 000 EXP 9-10 Days - Unicum</div>
+                      <div class="oferta"></div>
                       <span>$1,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 50 Million Credits 1 300 000 EXP 9-10 Days - Unicum" data-price="1.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -417,7 +379,7 @@
                 <a href="#"><img src="assets\img\actual offer pics\50unicum.jpg" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                      <div class="oferta">World of Tanks - 50 Million Credits 1 300 000 EXP 9-10 Days - Super Unicum</div>
+                      <div class="oferta"></div>
                       <span>$1,00</span><br>
 					  <a class="add-to-cart" href="#" data-name="World of Tanks - 50 Million Credits 1 300 000 EXP 9-10 Days - Super Unicum" data-price="1.00">Add to cart</a><br>
 					  <a class="more-info" href="#">For more info </a>
@@ -438,113 +400,113 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer>
-    <div class="footer-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="footer-content">
-              <div class="footer-head">
-                <div class="footer-logo">
-                  <h1><a href="index.html"><img src="assets\img\logo\1hr.png" alt="1hr.pro"></a></h1>
-                </div>
+<!-- ======= Footer ======= -->
+<footer>
+  <div class="footer-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          
+            <div class="footer-head">
+              <div class="footer-logo">
+                <h1><a href="index.html"><img src="assets\img\logo\1hr.png" alt="1hr.pro"></a></h1>
+              </div>
 
-                <p id="footer-text">We offer professional, speedy, and quality World of Tanks boosting services along with 
-				one-on-one coaching to help better player's skills.</p>
-                <div class="footer-icons">
-                  <ul>
-                    <li>
-                      <a target="_blank" href="#"><i class="bi bi-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a target="_blank" href="#"><i class="bi bi-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a target="_blank" href="https://discord.gg/v8eZJ5JC2X"><i class="bi bi-discord"></i></a>
-                    </li>
-                  </ul>
-                </div>
+              <p id="footer-text">We offer professional, speedy, and quality World of Tanks boosting services along with 
+      one-on-one coaching to help better player's skills.</p>
+              <div class="footer-icons">
+                <ul>
+                  <li>
+                    <a target="_blank" href=
+          "https://www.facebook.com/profile.php?id=100073556847896&show_switched_toast=true">
+          <i class="bi bi-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="mailto: 1hrbstore@gmail.com"   target="_blank"><i class="bi bi-envelope"></i></a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://discord.gg/v8eZJ5JC2X"><i class="bi bi-discord"></i></a>
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
-          <!-- end single footer -->
-          <div class="col-md-4">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4>contact information</h4>
-                <p>
-                  All orders outside of our business hours are processed on the following day.
-                </p>
-                <div class="footer-contacts">
-                  <p><span>Tel:</span> Not available yet</p>
-                  <p><span>Email:</span> 1hrbstore@gmail.com</p>
-                  <p><span>Working Hours:</span> 12am-10pm CET time</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end single footer -->
-          <div class="col-md-4">
-            <div class="footer-content">
-              <div class="footer-head" style="position:relative; bottom:30px">
-				<div>
-					<center>
-				<a href="index.html#services" class="ready-btn scrollto">HOW TO MAKE A PURCHASE</a>
-				<a href="index.html#team" class="ready-btn scrollto">PAYMENT METHODS</a>
-				<a href="index.html#pricing" class="ready-btn scrollto">FREQUENTLY ASKED QUESTIONS</a>
-				<a href="index.html#contact" class="ready-btn scrollto">SEND US A MESSAGE</a>
-					</center>
-				</div> 
-              </div>
-            </div>
-          </div>
+         
         </div>
-      </div>
-    </div>
-	
-	<!-- TU WSZYSTKIE PRAWA ITD -->
-    <div class="footer-area-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="copyright text-center">
+        <!-- end single footer -->
+        <div class="col-md-4">
+          
+            <div class="footer-head footer-marginleft">
+              <h4>contact information</h4>
               <p>
-				All trademarks are the property of their respective owners and used solely as product 
-				descriptions.
-				<p>
-					&copy; Copyright <strong>1hrBoosting.pro</strong>. All Rights Reserved
-				</p>
+                All orders outside of our business hours are processed on the following day.
               </p>
+              <div class="footer-contacts">
+                <p><span>Tel:</span> Not available yet</p>
+                <p><span>Email:</span> 1hrbstore@gmail.com</p>
+                <p><span>Working Hours:</span> 12am-10pm CET time</p>
+              </div>
             </div>
-            <div class="credits">
-              <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
-            -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          
+        </div>
+        <!-- end single footer -->
+        <div class="col-md-4">
+          
+            <div class="footer-head" style="position:relative; bottom:30px">
+      <div>
+        <center>
+      <a href="index.html#services" class="ready-btn scrollto">HOW TO MAKE A PURCHASE</a>
+      <a href="index.html#team" class="ready-btn scrollto">PAYMENT METHODS</a>
+      <a href="index.html#pricing" class="ready-btn scrollto">FREQUENTLY ASKED QUESTIONS</a>
+      <a href="index.html#terms" class="ready-btn scrollto">TERMS OF SERVICE</a>
+        </center>
+      </div> 
             </div>
-          </div>
+          
         </div>
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </div>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- TU WSZYSTKIE PRAWA ITD -->
+  <div class="footer-area-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="copyright text-center">
+            <p>
+      All trademarks are the property of their respective owners and used solely as product 
+      descriptions.
+      <p>
+        &copy; Copyright <strong>1hrBoosting.pro</strong>. All Rights Reserved
+      </p>
+            </p>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+</footer><!-- End  Footer -->
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/shoppingCart.js"></script>
+<!-- Preloader + back to top arrow-->
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script> <!-- nie korzystam obecnie (12 prtfolio 3 testimonials)-->
+
+
+
+<!-- JS Files -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/shoppingCart.js"></script>
+
+
 </body>
 
 </html>
