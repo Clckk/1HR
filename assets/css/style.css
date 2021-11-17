@@ -162,16 +162,6 @@ body {
   padding-right: calc(var(--bs-gutter-x)/ -30);
 }
 
-.video-background {
-  left: 0;
-  top: 0;
-  position: fixed;
-  width: 100%!important;
-  height: auto!important;
-  display: flex; 
-  opacity: 0.95;
-  z-index: -20;
-}
 
 /*--------------------------------------------------------------
 # Back to top button and preloader
@@ -1512,6 +1502,31 @@ center {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+.video-background {
+  left: 0;
+  top: 0;
+  position: fixed;
+  min-width: 100%!important;
+  min-height: auto!important;
+  display: flex; 
+  opacity: 0.95;
+  z-index: -20;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-background{
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-background {
+    width: auto;
+    height: 100%;
+  }
+}
+
+
 .pst-content {
   padding-left: 10px;
 }
@@ -1519,6 +1534,7 @@ center {
 #portfolio {
 	margin-top:75px;
 }
+
 
 #portfolio .single-awesome-project .oferta{
   font-family: 'Open Sans';
