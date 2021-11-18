@@ -401,6 +401,10 @@ div#preloader {
   margin-left: 5px;
 }
 
+#catalog a{
+  text-shadow: 0px 0px 20px rgb(247, 247, 247);
+}
+
 
 
 
@@ -1174,7 +1178,7 @@ div#preloader {
   background-size: cover;
 }
 
-.faq-area p{
+#pricing p{
   color: rgb(255, 240, 240);
   font-family: 'Hind', sans-serif; 
 }
@@ -1513,6 +1517,16 @@ center {
   z-index: -20;
 }
 
+.vid {
+  left:0;
+  top:0;
+  position:absolute;
+  display: block;
+  height: 168px;
+  width: auto;
+  z-index: 11111;
+}
+
 @media (min-aspect-ratio: 16/9) {
   .video-background{
     width: 100%;
@@ -1524,6 +1538,11 @@ center {
     width: auto;
     height: 100%;
   }
+}
+
+.notecredits {
+  line-height:0px;
+  font-size:10px;
 }
 
 
@@ -2123,6 +2142,7 @@ center {
   }
   .section-headline h2 {
     font-size: 30px;
+    margin-top: 60px;
   }
   .well-middle .single-well {
     margin-top: 30px;
