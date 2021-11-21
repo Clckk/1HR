@@ -1615,8 +1615,12 @@ center {
   font-weight: 500;
 }
 
+#nav-tabContent {
+  border-bottom: 1px solid rgb(172, 172, 172);
+}
+
 .desc-bg {
-  background-image:url(../img/background/244084.png)!important;
+  background-image:url(../img/background/bg.png); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
