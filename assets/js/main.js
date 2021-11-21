@@ -279,7 +279,7 @@
   }
 
 
-
+/*
   //Green screen Removal function
   const box = document.querySelector('.box');
   const video = document.querySelector('.vid');
@@ -313,3 +313,4 @@
 
     requestAnimationFrame(drawVid);
   }
+  */

@@ -362,6 +362,37 @@ div#preloader {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "-";
+}
+
+.breadcrumb {
+  padding-top:30px!important;
+  padding-left:20px!important;
+  padding:5px;
+}
+
+.breadcrumb .breadcrumb-item a{
+  color: rgb(112, 112, 112);
+  font-family: 'ProxNov400', sans-serif;
+  text-shadow: 0px 0px 2px white;
+  line-height: 1;
+}
+
+.breadcrumb .breadcrumb-item  a:hover{
+  color:white;
+}
+
+.breadcrumb .breadcrumb-item a i {
+  margin-bottom: 30px;
+}
+
+
+.breadcrumb-item.active{
+  color:rgb(124, 124, 124);
+  text-decoration: none;
+}
+
 /**
 * Desktop Navigation 
 */
@@ -401,10 +432,9 @@ div#preloader {
   margin-left: 5px;
 }
 
-#catalog a{
-  text-shadow: 0px 0px 20px rgb(247, 247, 247);
+#catalog-navbar a{
+  text-shadow: 0px 0px 20px rgb(245, 245, 245);
 }
-
 
 
 
@@ -444,12 +474,28 @@ div#preloader {
   transition-property: transform, opacity;
 }
 
-.navbar .navi #faq a:before{
-  left: 27%;
+.navbar .navi #catalog-navbar a:before{
+  left:20%;
 }
 
-.navbar .navi #others a:before{
-  left: 19%;
+.navbar .navi #about-navbar a:before{
+  left:3%;
+  width:120%;
+}
+
+.navbar .navi #contact-navbar a:before{
+  left:4%;
+  width:120%;
+}
+
+.navbar .navi #tos-navbar a:before{
+  left:-7%;
+  width:130%;
+}
+
+.navbar .navi #others-navbar a:before{
+  left: 17%;
+  width:100%;
 }
 
 .navbar .navi a:hover, .navbar .navi a:after, .navbar .navi a:focus{
@@ -572,30 +618,30 @@ div#preloader {
     
   }
 }
-.navbar.responsive .navi #creditsexp a:before{
+.navbar.responsive .navi #catalog-navbar a:before{
+  left: 7%;
+  width: 50%;
+}
+
+.navbar.responsive .navi #about-navbar a:before{
   left: 6%;
-  width: 70%;
+  width:55%;
 }
 
-.navbar.responsive .navi #rankedbattles a:before{
-  left: 4%;
-  width:80%;
+.navbar.responsive .navi #contact-navbar a:before{
+  left: 8%;
+  width:50%;
 }
 
-.navbar.responsive .navi #paymentmethods a:before{
+
+.navbar.responsive .navi #tos-navbar a:before{
   left: 5%;
   width:90%;
 }
 
-
-.navbar.responsive .navi #faq a:before{
-  left: 6%;
-  width:30%;
-}
-
-.navbar.responsive .navi #others a:before{
-  left: 6%;
-  width:50%;
+.navbar.responsive .navi #others-navbar a:before{
+  left: 10%;
+  width:40%;
 }
 
 /*animacja on scroll*/
@@ -1502,10 +1548,95 @@ center {
 .dropdown-content a:hover {background-color: #f1f1f1}
 .show {display:block;}
 
+/*--------------------------------------------------------------
+# Description Section dynamic tabs on toggle
+--------------------------------------------------------------*/
+
+.nav-tabs .nav-link{
+  border: 1px solid rgb(110, 110, 110);
+}
+
+.tab-pane {
+    width: 80%;
+    position: relative;
+    left: 10%;
+    text-align: center;
+}
+
+.nav-tabs {
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (max-width: 630px) {
+  .nav-tabs .nav-link {
+    font-size: 11px;
+    min-height: 70px;
+  }
+}
+
+.nav-link {
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgb(141, 141, 141);
+  text-shadow: 0 0 15px rgb(146, 18, 18);
+  width:33.33%;
+}
+
+.nav-link.active{
+  color: #30d6ce!important;
+  background-color: black!important;
+  text-shadow: 0 0 15px rgb(19, 195, 226);
+  border-color: #ffffff #dee2e6 #fff;
+}
+
+#nav-tabContent .tab-pane{
+  color: rgb(255, 240, 240);
+  font-family: 'Hind', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  width: 80%;
+  position: relative;
+  left: 10%;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgb(199, 16, 16);
+}
+
+.tab-pane > h4 {
+  color: rgb(197, 194, 194);
+  text-shadow: 5px 4px 4px black;
+  text-shadow: -1px -1px 6 #000, 1px -1px 1 rgb(0, 0, 0), 2px 2px 2 #000, 1px 6px 6 #000;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.desc-bg {
+  background-image:url(../img/background/244084.png)!important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+.wotlogo{
+ background-repeat: no-repeat;
+  display: flex;
+  opacity: 20%;
+  position: absolute;
+  z-index: -19;
+  padding-top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
 .video-background {
   left: 0;
   top: 0;
@@ -1550,10 +1681,6 @@ center {
   padding-left: 10px;
 }
 
-#portfolio {
-	margin-top:75px;
-}
-
 
 #portfolio .single-awesome-project .oferta{
   font-family: 'Open Sans';
@@ -1567,7 +1694,7 @@ center {
 
 #portfolio-flters {
   padding: 0;
-  margin: 5px 0 35px 0;
+  margin: 0px 0 35px 0;
   list-style: none;
   text-align: center;
 }
@@ -2144,6 +2271,12 @@ center {
     font-size: 30px;
     margin-top: 60px;
   }
+
+  #portfolio .section-headline h2 {
+    font-size: 30px;
+    margin-top: 0;
+  }
+
   .well-middle .single-well {
     margin-top: 30px;
   }
@@ -2188,9 +2321,6 @@ center {
   }
   .service-images:hover .overly-text {
     display: none;
-  }
-  .portfolio-area {
-    padding-top: 0px;
   }
   .project-menu li a {
     padding: 8px 12px;
