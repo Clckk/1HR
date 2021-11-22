@@ -1,0 +1,48 @@
+<html>
+Kalkulator:<br>
+<form name="cal">
+200zł<input type="checkbox" id="l200" name="option"><br>
+100zł<input type="checkbox" id="l100" name="option"><br>
+50zł <input type="checkbox" id="l50"  name="option"><br>
+20zł <input type="checkbox" id="l20"  name="option"><br>
+<input type="button" onclick="Calculator()" value="Guzik" /><br>
+<input name="check" type="text">
+</form>
+</html>
+
+<script>
+function Calculator() {
+	
+	var count = 0;
+	var max = 4;
+	var zaznaczone = 0;
+	for (var idx = 0; idx < max; idx++) {
+       if (eval("document.cal.option[" + idx + "].checked") == true) {
+          zaznaczone += 1;
+       }
+    }
+	
+	alert(zaznaczone + "/" + max);
+	
+    switch(count) 
+    {
+        case 1:
+            var result = parseFloat(a) + parseFloat(b);         
+        break;
+		case 1:
+            var result = parseFloat(a) + parseFloat(b);         
+        break;
+        case 2:
+            var result = parseFloat(a) - parseFloat(b);         
+        break;  
+        case 3:
+            var result = parseFloat(a) * parseFloat(b);         
+        break;  
+        case 4:
+            var result = parseFloat(a) / parseFloat(b);         
+        break;    
+    }
+ 
+    document.getElementById('result').value = '= ' + result;
+}
+</script>
