@@ -1010,7 +1010,6 @@ div#preloader {
 }
 
 .single-team-member:hover .team-social-icon {
-  top: 45%;
   opacity: 1;
 }
 
@@ -1018,11 +1017,12 @@ div#preloader {
 
 .team-img {
   position: relative;
-  padding: 8%;
+  padding: 0%;
+  height: 80px;
+  width: 80px;
 }
 
 .team-img > a {
-  display: flex;
   block-size:250px;
   align-items: center;
   max-width: 60%;
@@ -1045,6 +1045,8 @@ div#preloader {
   flex:1;
   margin-left: auto;
   margin-right: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .team-img .banktransfer{
@@ -1055,7 +1057,7 @@ div#preloader {
 
 .team-img > a::after {
   background: rgba(0, 0, 0, 0.7);
-  border-radius: 50px 50px 30px 30px; 
+  border-radius: 5px 5px 5px 5px; 
   bottom: 0;
   content: "";
   height: 100%;
@@ -1068,7 +1070,7 @@ div#preloader {
 
 .team-social-icon {
   left: 50%;
-  margin-left: -61px;
+  margin-left: -56px;
   opacity: 0;
   position: absolute;
   top: 30%;
@@ -1321,7 +1323,7 @@ body {
 }
 .accordion button[aria-expanded='true'] + .accordion-content {
   opacity: 1;
-  max-height: 9em;
+  max-height: 30em;
   transition: all 600ms linear;
   will-change: opacity, max-height;
 }
@@ -1369,7 +1371,105 @@ body {
   border-left:   3px outset  black;
 }
 
-.termsbackgroundd {
+@media (max-width: 990px) {
+
+  .termsbackground {
+    margin-top: -30px;
+    font-size: 11px;
+    line-height: 20px;
+  }
+
+  .termsbackground2 {
+    font-size: 11px;
+  }
+
+}
+
+@media (max-width: 760px) {
+
+  .termsbackground {
+    margin-top: -60px;
+  }
+
+  .termsbackground .textshadow{
+    margin-top: -90px!important;
+  }
+
+  .termsbackground2 {
+    font-size: 11px;
+  }
+
+}
+
+@media (max-width: 510px) {
+
+  .termsbackground {
+    margin-top: -60px;
+    line-height: 17px;
+  }
+
+  .termsbackground .textshadow{
+    margin-top: -90px!important;
+  }
+
+  .termsbackground2 {
+    font-size: 11px;
+  }
+
+}
+
+@media (max-width: 430px) {
+
+  .termsbackground {
+    margin-top: 20px!important;
+    line-height: 14px;
+  }
+
+  .termsbackground .textshadow{
+    margin-top: -70px!important;
+  }
+
+  .termsbackground2 {
+    font-size: 11px;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .termsbackground h2 {
+    margin-bottom: 40px;
+  }
+
+  .termsbackground2 {
+    font-size: 11px;
+  }
+
+}
+
+@media (max-width: 319px) {
+
+  .termsbackground h2 {
+    margin-bottom: 40px;
+  }
+
+  .termsbackground{
+    font-size: 9px;
+  }
+
+  .termsbackground .textshadow{
+    margin-top: -60px!important;
+  }
+
+
+  .termsbackground2 {
+    font-size: 9px;
+  }
+
+}
+
+.termsbackground2 {
   background: url(../img/background/westfield.jpg);
   overflow: hidden;
   background-repeat: no-repeat;
@@ -1603,7 +1703,7 @@ center {
   position: relative;
   left: 10%;
   text-align: center;
-  text-shadow: 1px 1px 5px rgb(199, 16, 16);
+  text-shadow: 1px 1px 5px rgb(0, 0, 0);
 }
 
 .tab-pane > h4 {
