@@ -923,7 +923,7 @@ div#preloader {
 }
 
 .services-details {
-  padding-top: 40px;
+  padding-top: 10px;
   transition: all 0.5s ease 0s;
 }
 
@@ -1079,6 +1079,14 @@ div#preloader {
 
 .team-social-icon ul li {
   display: inline-block;
+}
+
+.visa img {
+  margin-top: 20px;
+}
+
+.mastercard img {
+  margin-top: 20px;
 }
 
 .team-social-icon ul li a {
@@ -1697,8 +1705,9 @@ center {
 #nav-tabContent .tab-pane{
   color: rgb(255, 240, 240);
   font-family: 'Hind', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 300;
+  line-height: 1.5rem;
   width: 80%;
   position: relative;
   left: 10%;
@@ -1707,12 +1716,16 @@ center {
 }
 
 .tab-pane > h4 {
-  color: rgb(197, 194, 194);
+  color: rgb(214, 214, 214);
   text-shadow: 5px 4px 4px black;
   text-shadow: -1px -1px 6 #000, 1px -1px 1 rgb(0, 0, 0), 2px 2px 2 #000, 1px 6px 6 #000;
   font-family: 'Work Sans', sans-serif;
-  font-size: 24px;
+  font-size: 1.8rem;
   font-weight: 500;
+}
+
+.tab-pane b, strong {
+  font-weight: 700!important;
 }
 
 #nav-tabContent {
