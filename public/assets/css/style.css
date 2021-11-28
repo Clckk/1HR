@@ -304,6 +304,13 @@ div#preloader {
   }
 }
 
+@media (max-width: 579px) { 
+  #header .logo a img{  
+    margin-left:63px;
+    margin-top: 3px;
+  }
+}
+
 #header.header-scrolled {
   background: rgba(0, 0, 0, 0.8);
   height: 74px;
@@ -662,6 +669,11 @@ div#preloader {
 
 #header .navbar.responsive {
   max-height: 300px;
+}
+
+#header.header-scrolled .submenu{
+  margin-top:-3px;
+  transition: all 0.5s;
 }
 
 
@@ -2063,7 +2075,7 @@ center {
 }
 
 .carter {
-	width: 55px;
+	width: 35px;
 }
 .add-to-cart:hover {
   border: 3px solid #3ec1d5;
@@ -2116,7 +2128,7 @@ center {
 }
 
 .carter {
-	width: 41px;
+	width: 27px;
 }
 
 .add-to-cart:hover {
@@ -2863,8 +2875,33 @@ td:last-child {
 .carter {
 	margin-left:20 px;
 	justify-content: space-between;
-    padding: 10px 0 20px 20px;
 	margin: 0;
+}
+
+@media (max-width: 701px)
+{
+  .carter {
+    width: 19px;
+  }
+
+  .carter-position{
+    right: 20px!important; 
+  }
+
+}
+
+
+.carter-position{
+  top:5px; 
+}
+
+@media (max-width: 991px)
+{
+  .carter-position{
+    right: 35px; 
+    top:29px; 
+    position: fixed;
+  }
 }
 
 .add-to-cart:hover {

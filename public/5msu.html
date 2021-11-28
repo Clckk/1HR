@@ -61,21 +61,62 @@
         </ul>
 
 
-        <span class="submenu" style="margin-left:50px;">
-          <div>
-            <form class="flex flex-col justify-around text-white mb-8">
-              <input  id="email_field" type="email" placeholder="Enter your email..." />
-              <input    id="password_field" type="password" placeholder="Enter your password..."/>
-            </form>
-            <button onclick="login()"> Login </button>
-          </div>
-        </span>
-			
+
+
 			
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 
 
       </nav><!-- .navbar -->
+<div class="justify-content-sm-center align-items-center d-flex carter-position">
+
+  <span class="submenu"style="margin-left:70px;">
+    <a href="#" target="_blank"><img src="img/cart.png" class="carter" 
+      id="img-carrito">
+      <span class="badge" id="count">
+        <span id="count-cart">X
+        </span>
+      </span>
+    </a>
+  </span>
+
+      <span class="submenu">
+        <a href="#" target="_blank"><img src="img/cart.png" class="carter" 
+          id="img-carrito">
+          <span class="badge" id="count">
+            <span id="count-cart">X
+            </span>
+          </span>
+        </a>
+        <div id="carrito">
+        <div class="scrollbar" id="style-1">
+        <div class="force-overflow">
+          <table id="lista-carrito" class="u-full-width">
+            <thead>
+            <tr>
+               <span class="cart-header"><b>Total Price: </b>
+               $<span id="total-cart"></span></span>
+            </tr>
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Price</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>	
+            </thead>
+            <tbody id="show-cart">
+            </tbody>
+          </table>
+          <input type="button" class="pot" id="clear-cart" value="Clear Cart"></input>
+          <a href="#"><input class="checkout" type="button" value="Cheakout"></input></a>
+        </div>
+    </div>
+    </div>
+
+</span>
+</div>
 
 
       <script>
