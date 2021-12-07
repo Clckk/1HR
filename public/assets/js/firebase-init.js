@@ -10,4 +10,12 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
+const appSignUp = firebase.initializeApp(firebaseConfig,'temp');
+
+//Make auth and firestore references
+const auth = firebase.auth();
+// const db = firebase.firestore();
+
+// //update firestore settings
+// db.settings({timestampsInSnapshots: true})

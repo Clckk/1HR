@@ -59,27 +59,41 @@
           <li id="others-navbar"><a href="workingprogres.html">Others</a></li>
 
         </ul>
-
-
-
+        
 
 			
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 
 
-      </nav><!-- .navbar -->
+      </nav>
+      <!-- .navbar -->
 <div class="justify-content-sm-center align-items-center d-flex carter-position">
+  <!-- acc icom -->
+  <span class="submenu"style="margin-left:70px; margin-right: 20px;">
+    <a href="#" target="_blank"><img src="img/cart.png" class="carter" id="img-carritoacc">
+      <div id="carritoacc">
+        <table class="u-full-width"> 
+              <ul id="" class="">
+                <li class="logged-in">
+                  <a href="" class="modal-trigger" data-target="modal-account" ><h4>My Account</h4></a>
+                </li>
+                <li class="logged-in">
+                  <a href="" class="" id="logout"><h4>Logout</h3></a>
+                </li> 
 
-  <span class="submenu"style="margin-left:70px;">
-    <a href="login-signup.html" target="_blank"><img src="img/cart.png" class="carter" 
-      id="img-carrito">
-      <span class="badge" id="count">
-        <span id="count-cart">X
-        </span>
-      </span>
+                <li class="logged-out">
+                  <a href="login-signup.html" class="modal-trigger" data-target="modal-login"><h4>Login</h4></a>
+                </li>
+                <li class="logged-out">
+                  <a href="signup-login.html" id="signupmenu" class="modal-trigger" data-target="modal-signup"><h4>Sign Up</h4></a>
+                </li>  
+              </ul>
+        </table>
+      </div>
     </a>
   </span>
 
+      <!-- cart icon -->
       <span class="submenu">
         <a href="#" target="_blank"><img src="img/cart.png" class="carter" 
           id="img-carrito">
@@ -438,7 +452,7 @@
 
               <div class="accordion-item">
                 <button id="accordion-button-1" aria-expanded="false">
-                  <span class="accordion-title">Will you use my reserves?</span>
+                  <span class="accordion-title">Will you use My reserves?</span>
                   <span class="icon" aria-hidden="true"></span>
                 </button>
                 <div class="accordion-content">
@@ -453,7 +467,7 @@
           
               <div class="accordion-item">
                 <button id="accordion-button-2" aria-expanded="false">
-                  <span class="accordion-title">Will you use my gold?</span>
+                  <span class="accordion-title">Will you use My gold?</span>
                   <span class="icon" aria-hidden="true"></span>
                 </button>
                 <div class="accordion-content">
@@ -501,7 +515,7 @@
 
               <div class="accordion-item">
                 <button id="accordion-button-5" aria-expanded="false">
-                  <span class="accordion-title">Can I play on my account during the completion of my order?</span>
+                  <span class="accordion-title">Can I play on My account during the completion of my order?</span>
                   <span class="icon" aria-hidden="true"></span>
                 </button>
                 <div class="accordion-content">
@@ -682,11 +696,20 @@
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> <!-- nie korzystam obecnie (12 prtfolio 3 testimonials)-->
 
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>   <!-- wg bootstrap templpate jest potrzbne do koszyka tez -->
 
+<!-- Firebase features -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 
 <!-- JS Files -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/shoppingCart.js"></script>
+<script src="assets/js/firebase-init.js"></script>
+<script src="assets/js/loginsignupMenu.js"></script>
+
+ 
 
 
 </body>
