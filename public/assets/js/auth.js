@@ -1,12 +1,3 @@
-// const createAccunt = document.querySelector('#createAccount');
-// createAccunt.addEventListener('submit', (e) => {
-//     e.preventDefault();
-    
-//     //get user info
-//     const email = createAccunt['email']
-// })
-
-
 
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
@@ -37,10 +28,8 @@ function clearFormMessage(formElement) {
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
-
     var form = document.getElementById("form");
    
-    var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
@@ -61,17 +50,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
+    //login on the form
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
 
-        // Perform your AJAX/Fetch login
+        const logemail = loginForm['loginEmail'].value;
+        const logpassword = loginForm['loginPassword'].value;
+        const myaccbutton = document.querySelector("#my-account-button");
 
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
+        auth.signInWithEmailAndPassword(logemail, logpassword).then(cred => {
+            console.log(cred.user)
+            
+            setFormMessage(loginForm, "success", "You're now logged in");
+            myaccbutton.classList.remove("form--hidden");
+            loginForm.reset();
+        })
+        .catch((error) => {
+            setFormMessage(loginForm, "error", error.message);
+        });
     });
 
 
-    
+    //signup
     createAccountForm.addEventListener("submit", e => {
         let messages = []
         e.preventDefault();
@@ -99,6 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     appSignUp.auth().signOut();
                     createAccountForm.reset();
 
+                    setFormMessage(loginForm, "success", "You may now log in :)");
+
+
                 })
                 .catch((error) => {
                     setFormMessage(createAccountForm, "error", error.message);
@@ -108,14 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("AccMainErr").textContent = 'Passowrds do not match or Username is less than 4 characters';
 
             }
-        
-            
-
-
-    //   // Perform your AJAX/Fetch login
-
     //  setFormMessage(createAccountForm, "error", "Invalid given information");
-
 
     //   if (email.value === '' || email.value == null){
     //     setFormMessage(inputElement, "Fill in Your Email adress");
@@ -123,14 +119,10 @@ document.addEventListener("DOMContentLoaded", () => {
     //   }
     });
 
-    // document.querySelectorAll(".form__input").forEach(inputElement => {
-    //     inputElement.addEventListener("input", e => {
-    //     });
-    // });
+ 
     
     
-    
-    
+    //username error and clearing errors upon typing
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 4) {

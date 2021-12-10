@@ -40,48 +40,113 @@
       <source src="cinematicbg.mp4" type="video/mp4">
     </video>
   </div>
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top" style="border-bottom-style:dashed;">
-    <div class="d-flex justify-content-sm-center">
-
-      <div class="logo">
-        <h1><a href="index.html" style="margin-right:50px;"><img src="assets\img\logo\1hrAdressBlack.png" alt="1hr.pro"></a></h1>
-        
-      </div>
-
-      
-      <nav id="navbar" class="navbar">
-        <ul class="navi">
-          <li id="catalog-navbar"><a href="credits.html">Catalog</a></li>
-          <li id="about-navbar"><a href="index.html#about">About Us</a></li>          
-          <li id="contact-navbar"><a href="index.html#footer-areas">Contact</a></li>
-          <li id="tos-navbar"><a href="index.html#terms">Terms of Service</a></li>
-          <li id="others-navbar"><a href="workingprogres.html">Others</a></li>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top" style="border-bottom-style:dashed;">
+      <div class="d-flex justify-content-sm-center">
+  
+        <div class="logo">
+          <h1><a href="index.html" style="margin-right:50px;"><img src="assets\img\logo\1hrAdressBlack.png" alt="1hr.pro"></a></h1>
           
-        </ul>
-			
-			
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-
-
-      </nav><!-- .navbar -->
-
-
-
-      <script>
-        function myFunction() {
-          var x = document.getElementById("navbar");
-          if (x.className === "navbar") {
-            x.className += " responsive";
-          } else {
-            x.className = "navbar";
+        </div>
+  
+        
+        <nav id="navbar" class="navbar">
+          <ul class="navi">
+            <li id="catalog-navbar"><a href="credits.html">Catalog</a></li>
+            <li id="about-navbar"><a href="index.html#about">About Us</a></li>          
+            <li id="contact-navbar"><a href="index.html#footer-areas">Contact</a></li>
+            <li id="tos-navbar"><a href="index.html#terms">Terms of Service</a></li>
+            <li id="others-navbar"><a href="workingprogres.html">Others</a></li>
+  
+          </ul>
+          
+  
+        
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+  
+  
+        </nav>
+        <!-- .navbar -->
+  <div class="justify-content-sm-center align-items-center d-flex carter-position">
+    <!-- acc icom -->
+    <span class="submenu"style="margin-left:70px; margin-right: 20px;">
+      <a href="#" target="_blank"><img src="img/cart.png" class="carter" id="img-carritoacc">
+        <div id="carritoacc">
+          <table class="u-full-width"> 
+                <ul id="" class="">
+                  <li class="logged-in">
+                    <a href="" class="modal-trigger" data-target="modal-account" ><h4>My Account</h4></a>
+                  </li>
+                  <li class="logged-in">
+                    <a href="" class="" id="logout"><h4>Logout</h4></a>
+                  </li> 
+  
+                  <li class="logged-out">
+                    <a href="login-signup.html" class="modal-trigger" data-target="modal-login"><h4>Login</h4></a>
+                  </li>
+                  <li class="logged-out">
+                    <a href="signup-login.html" id="signupmenu" class="modal-trigger" data-target="modal-signup"><h4>Sign Up</h4></a>
+                  </li>  
+                </ul>
+          </table>
+        </div>
+      </a>
+    </span>
+  
+        <!-- cart icon -->
+        <span class="submenu">
+          <a href="#" target="_blank"><img src="img/cart.png" class="carter" 
+            id="img-carrito">
+            <span class="badge" id="count">
+              <span id="count-cart">X
+              </span>
+            </span>
+          </a>
+          <div id="carrito">
+          <div class="scrollbar" id="style-1">
+          <div class="force-overflow">
+            <table id="lista-carrito" class="u-full-width">
+              <thead>
+              <tr>
+                 <span class="cart-header"><b>Total Price: </b>
+                 $<span id="total-cart"></span></span>
+              </tr>
+              <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>	
+              </thead>
+              <tbody id="show-cart">
+              </tbody>
+            </table>
+            <input type="button" class="pot" id="clear-cart" value="Clear Cart"></input>
+            <a href="#"><input class="checkout" type="button" value="Cheakout"></input></a>
+          </div>
+      </div>
+      </div>
+  
+  </span>
+  </div>
+  
+  
+        <script>
+          function myFunction() {
+            var x = document.getElementById("navbar");
+            if (x.className === "navbar") {
+              x.className += " responsive";
+            } else {
+              x.className = "navbar";
+            }
           }
-        }
-        </script>
-
-
-    </div>
-  </header><!-- End Header -->
+          </script>
+  
+  
+      </div>
+    </header><!-- End Header -->
   
 
   
@@ -518,12 +583,20 @@
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> <!-- nie korzystam obecnie (12 prtfolio 3 testimonials)-->
 
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>   <!-- wg bootstrap templpate jest potrzbne -->
-  
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>   <!-- wg bootstrap templpate jest potrzbne do koszyka tez -->
+
+<!-- Firebase features -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 
 <!-- JS Files -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/shoppingCart.js"></script>
+<script src="assets/js/firebase-init.js"></script>
+<script src="assets/js/loginsignupMenu.js"></script>
+
+ 
 
 
 </body>

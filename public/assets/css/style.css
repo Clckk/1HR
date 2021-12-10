@@ -350,6 +350,16 @@ div#preloader {
   }
 }
 
+@media (max-width: 355px) {
+  #header .logo a img{  
+    max-height: 30px;
+  }
+
+  .carter {
+    width: 19px!important;
+  }
+}
+
 #header.header-scrolled {
   background: rgba(0, 0, 0, 0.8);
   height: 74px;
@@ -2823,6 +2833,10 @@ td:last-child {
   list-style-type: none;
 }
 
+#my-account-button a{
+  color: white;
+}
+
 /* cart submenu on hover */
 .submenu #carrito{
   display: none;
@@ -2866,8 +2880,7 @@ td:last-child {
   top:100%;
   z-index: 1;
   background-color: rgb(243, 243, 243);
-  padding-top: 30px;
-  min-height: 160px;
+  min-height: 125px;
   min-width: 200px;
   border:3px solid rgb(11, 196, 199);
   margin-left: -80px;
@@ -2880,6 +2893,9 @@ td:last-child {
   align-items: center;
   justify-content: center;
   display: flex;
+  border-bottom: 1px solid #E1E1E1;
+  border-width: 80%;
+  margin-top: 10px;
 }
 
 #carritoacc h4{
@@ -2913,7 +2929,15 @@ td:last-child {
 @media (max-width: 701px)
 {
   .carter {
-    width: 19px;
+    width: 28px;
+  }
+
+  .submenu {
+    margin-right: 10px!important;
+  }
+
+  #img-carritoacc .carter {
+    width: 26px!important;
   }
 
   .carter-position{
@@ -3146,7 +3170,7 @@ td:last-child {
 }
 
 .form__link {
-  color: var(--color-secondary);
+  color: rgb(125, 138, 201);
   text-decoration: none;
   cursor: pointer;
 }
