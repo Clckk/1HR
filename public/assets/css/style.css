@@ -2866,7 +2866,7 @@ td:last-child {
 /* account submenu on hover */
 .submenu #carritoacc{
   display: none;
-  height: 10px;
+  height: 110px;
 }
 #carritoacc{
 	overflow: auto;
