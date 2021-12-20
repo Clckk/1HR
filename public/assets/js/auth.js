@@ -56,13 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const logemail = loginForm['loginEmail'].value;
         const logpassword = loginForm['loginPassword'].value;
-        const myaccbutton = document.querySelector("#my-account-button");
+        const myaccbtn = document.querySelector('#my-account-button')
 
         auth.signInWithEmailAndPassword(logemail, logpassword).then(cred => {
             console.log(cred.user)
             
             setFormMessage(loginForm, "success", "You're now logged in");
-            myaccbutton.classList.remove("form--hidden");
+            myaccbtn.classList.remove("form--hidden");
+            myaccbtn.classList.add("display-block")
             loginForm.reset();
         })
         .catch((error) => {
@@ -99,7 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     appSignUp.auth().signOut();
                     createAccountForm.reset();
 
+
+
+
+                    
                     setFormMessage(loginForm, "success", "You may now log in :)");
+
+            
 
 
                 })

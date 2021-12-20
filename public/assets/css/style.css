@@ -3432,6 +3432,10 @@ td:last-child {
   background: var(--color-primary);
 }
 
+.display-block {
+  display: block!important;
+}
+
 .form__button:hover {
   background: var(--color-primary-dark);
 }

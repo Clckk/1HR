@@ -65,6 +65,7 @@ verifybutton.addEventListener('click', (e) => {
        window.alert("Verification email has been sent")
     });
 })
+
  
 
 
