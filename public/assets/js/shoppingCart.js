@@ -146,7 +146,7 @@ $(".add-to-cart").click(function(event){
 
 					
                 for (var i in cartArray) {
-                    output += "<tr><th>"
+                    output += "<tr><th class='cart_item-name' >"
                         +cartArray[i].name
                         +" </th><th><input class='item-count' style='width:55px;text-align: right;padding-left:10px; ' type='number' disabled data-name='"
                         +cartArray[i].name
@@ -166,6 +166,13 @@ $(".add-to-cart").click(function(event){
                 $("#show-cart").html(output);
                 $("#count-cart").html( shoppingCart.countCart() );
                 $("#total-cart").html( shoppingCart.totalCart() );
+
+                if(shoppingCart.countCart()==0){
+                    $('.checkout').css('display','none');
+                    }
+                else{
+                    $('.checkout').css('display','inline-block');
+                }
             }
 			
 
@@ -196,6 +203,10 @@ $(".add-to-cart").click(function(event){
 
 
             displayCart();
+
+
+
+
 
 
 

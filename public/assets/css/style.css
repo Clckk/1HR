@@ -3063,6 +3063,7 @@ td:last-child {
 
 .submenu {
   list-style-type: none;
+  position: relative;
 }
 
 #my-account-button a{
@@ -3074,9 +3075,14 @@ td:last-child {
   display: none;
 }
 #carrito{
+  position: relative;
 	overflow: auto;
 	max-height: 600px;
   border: 2px solid yellow;
+}
+
+#carrito .cart_item-name{
+  min-width: 330px;
 }
 
 @media (min-width: 991px) {
@@ -3098,8 +3104,13 @@ td:last-child {
 /* account submenu on hover */
 .submenu #carritoacc{
   display: none;
-  height: 110px;
 }
+
+.submenu #carritoacc ul{
+  margin-bottom: 0px;
+}
+
+
 #carritoacc{
 	overflow: auto;
 	max-height: 300px;

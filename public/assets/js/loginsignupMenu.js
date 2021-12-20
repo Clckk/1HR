@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
             menuItemLoggedOut[0].style.display = 'flex';
             menuItemLoggedOut[1].style.display = 'flex';
 
+            $('.section-headline.accountpage h2').html("My Account");
+
             var uid = user.uid; //przypisuje id
             const displayName = user.displayName;
             const email = user.email;
@@ -25,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             menuItemLoggedOut[0].style.display = 'none';
             menuItemLoggedOut[1].style.display = 'none';
+
+            $('.section-headline.accountpage h2').html("<a href='login-signup.html'> Log in to see your account </a>");
         }
 
         accSubmenu.addEventListener('click', function(){
