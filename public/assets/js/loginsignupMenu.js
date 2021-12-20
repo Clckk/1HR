@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
             menuItemLoggedOut[1].style.display = 'flex';
 
             var uid = user.uid; //przypisuje id
+            const displayName = user.displayName;
+            const email = user.email;
+            const photoURL = user.photoURL;
+            const emailVerified = user.emailVerified;
        
         } else {
             menuItemLoggedIn[0].style.display = 'flex';

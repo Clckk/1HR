@@ -2207,7 +2207,7 @@ center {
   display: block;
   background-color: inherit;
   color: black;
-  padding: 22px 16px;
+  padding: 22px 7px;
   width: 100%;
   outline: none;
   text-align: left;
@@ -2234,15 +2234,17 @@ center {
   border: 1px solid #ccc;
   width: 70%;
   font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
 }
 
 .tabcontent h3 {
+  font-weight: 700;
   color: #a57c7a;
   text-shadow: 1px 1px 20px red;
 }
 
 .tabcontent p {
-  font-weight: 300;
+  font-weight: 500;
   color: rgb(113, 113, 113);
   text-shadow: 1px 1px 10px grey;
 }
