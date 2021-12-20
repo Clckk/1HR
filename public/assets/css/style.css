@@ -3010,8 +3010,13 @@ td:last-child {
 /* account submenu on hover */
 .submenu #carritoacc{
   display: none;
-  height: 110px;
 }
+
+.submenu #carritoacc ul{
+  margin-bottom: 0px;
+}
+
+
 #carritoacc{
 	overflow: auto;
 	max-height: 300px;
