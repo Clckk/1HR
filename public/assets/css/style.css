@@ -2191,6 +2191,65 @@ center {
 }
 
 
+/*--------------------------------------------------------------
+# My account
+--------------------------------------------------------------*/
+
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid #ccc;
+  width: 70%;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.tabcontent h3 {
+  color: #a57c7a;
+  text-shadow: 1px 1px 20px red;
+}
+
+.tabcontent p {
+  font-weight: 300;
+  color: rgb(113, 113, 113);
+  text-shadow: 1px 1px 10px grey;
+}
+
+.tabcontent p a {
+  color: white!important;
+}
 
 /*--------------------------------------------------------------
 # Responsywnosc
