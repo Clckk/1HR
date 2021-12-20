@@ -2988,7 +2988,7 @@ td:last-child {
 }
 
 #carrito .cart_item-name{
-  min-width: 270px;
+  min-width: 330px;
 }
 
 @media (min-width: 991px) {
