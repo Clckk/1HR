@@ -2969,6 +2969,7 @@ td:last-child {
 
 .submenu {
   list-style-type: none;
+  position: relative;
 }
 
 #my-account-button a{
