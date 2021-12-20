@@ -2980,6 +2980,7 @@ td:last-child {
   display: none;
 }
 #carrito{
+  position: relative;
 	overflow: auto;
 	max-height: 600px;
   border: 2px solid yellow;

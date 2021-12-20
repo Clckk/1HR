@@ -166,6 +166,13 @@ $(".add-to-cart").click(function(event){
                 $("#show-cart").html(output);
                 $("#count-cart").html( shoppingCart.countCart() );
                 $("#total-cart").html( shoppingCart.totalCart() );
+
+                if(shoppingCart.countCart()==0){
+                    $('.checkout').css('display','none');
+                    }
+                else{
+                    $('.checkout').css('display','inline-block');
+                }
             }
 			
 
@@ -196,6 +203,10 @@ $(".add-to-cart").click(function(event){
 
 
             displayCart();
+
+
+
+
 
 
 
