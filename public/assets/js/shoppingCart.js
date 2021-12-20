@@ -146,7 +146,7 @@ $(".add-to-cart").click(function(event){
 
 					
                 for (var i in cartArray) {
-                    output += "<tr><th>"
+                    output += "<tr><th class='cart_item-name' >"
                         +cartArray[i].name
                         +" </th><th><input class='item-count' style='width:55px;text-align: right;padding-left:10px; ' type='number' disabled data-name='"
                         +cartArray[i].name

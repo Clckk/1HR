@@ -2986,6 +2986,10 @@ td:last-child {
   border: 2px solid yellow;
 }
 
+#carrito .cart_item-name{
+  min-width: 270px;
+}
+
 @media (min-width: 991px) {
 .submenu:hover #carrito{
   display: block;
