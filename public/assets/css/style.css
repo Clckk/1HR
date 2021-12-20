@@ -2248,7 +2248,8 @@ center {
 }
 
 .tabcontent p a {
-  color: white!important;
+  color: rgb(238, 238, 238)!important;
+  text-shadow: 1px 1px 10px rgb(255, 255, 255);
 }
 
 /*--------------------------------------------------------------
