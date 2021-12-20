@@ -3450,6 +3450,8 @@ td:last-child {
   cursor: pointer;
 }
 
+/* My account */
+
 .edit-button {
 
   text-align: left;
@@ -3483,4 +3485,54 @@ td:last-child {
 #wot-acc {
   border-top: 1px solid rgb(172, 172, 172);
   padding-top: 20px;
+}
+
+
+
+
+/* CHECKOUT  */
+
+
+.checkout_wrapper{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 300px;
+  padding: 50px;
+}
+
+.checkout_items,.checkout_forms{
+  padding: 50px;
+}
+
+.items-wrapper{
+  padding: 20px;
+  background-color: rgba(128, 128, 128, 0.8);
+}
+
+.checkout_items .checkout-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 10px;
+  border-bottom: black 1px solid;
+}
+
+.checkout-item a{
+  margin: 0 30px;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+
+.checkout-item p{
+  margin: 0;
+}
+
+.checkout-item p span{
+  color: #000;
+  margin: 0;
 }

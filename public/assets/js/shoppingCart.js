@@ -125,6 +125,12 @@ var shoppingCart = (function () {
     return obj;
 })();
 
+if(shoppingCart.countCart()==0){
+    if(window.location.href.match('checkout.html')!= null){
+        window.location = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/credits.html'
+    }
+}
+
 $(".add-to-cart").click(function(event){
                 event.preventDefault();
                 var name = $(this).attr("data-name");
@@ -161,6 +167,8 @@ $(".add-to-cart").click(function(event){
                         +" </th><th><button class='delete-item' data-name='"
                         +cartArray[i].name+"'>X</button>"
                         +"</th></tr>";
+
+                        
                 }
 
                 $("#show-cart").html(output);
@@ -203,6 +211,28 @@ $(".add-to-cart").click(function(event){
 
 
             displayCart();
+
+
+
+
+                //checkout page
+
+if(window.location.href.match('checkout.html')!= null){
+    document.addEventListener('DOMContentLoaded',function (){
+        var itemsWrapper = document.getElementById('cart-data')
+        var cartArray = shoppingCart.listCart();
+        
+
+        for (var i in cartArray) {
+            itemsWrapper.insertAdjacentHTML('beforeend',
+            `<div class="checkout-item"><a href='#'>${cartArray[i].name}</a><p>count: <span>${cartArray[i].count}</span> </p></div>`)
+        }
+
+
+
+    })                            
+
+}
 
 
 
