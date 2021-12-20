@@ -155,7 +155,9 @@
   
   <main id="main">
 
-    <div id="portfolio" class="portfolio-area area-padding fix" style="background-image: url(assets/img/background/wotcomp.png); opacity: 80%;">  
+    <div id="portfolio" class="portfolio-area area-padding fix" 
+    >  
+    <div style="background-image: url(assets/img/background/wotcomp.png); opacity: 80%;"></div>
          
         <!-- <div class="col-12 wotlogo"><img src="assets\img\logo\wotlogo.png"></img></div> -->
 
@@ -177,6 +179,51 @@
 			  </h2>
 			  
             </div>
+            <div class="tab">
+              <button class="tablinks" onclick="openCity(event, 'my-info')" id="defaultOpen">My Info</button>
+              <button class="tablinks" onclick="openCity(event, 'my-orders')">Orders</button>
+              <button class="tablinks" onclick="openCity(event, 'my-logout')">Log Out</button>
+            </div>
+            
+            <div id="my-info" class="tabcontent">
+              <h3>My Info</h3>
+              <p>Name&Surname:
+              <a>Mateusz Palka</a>
+              </p>
+              <p>AccountEmail AccountPassword AccountName Server</p>
+              <p> Username Email Password Phone number Birth Date - i to zeby sie zmienic dalo</p>
+            </div>
+            
+            <div id="my-orders" class="tabcontent">
+              <h3>Orders</h3>
+              <p></p> 
+            </div>
+            
+            <div id="my-logout" class="tabcontent">
+              <h3>Log Out</h3>
+              <p></p>
+            </div>
+
+            <script>
+              function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                  tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+              }
+              
+              // Get the element with id="defaultOpen" and click on it
+              document.getElementById("defaultOpen").click();
+              </script>
+
+
           </div>
         </div>
 
