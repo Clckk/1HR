@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const createAccountForm = document.querySelector("#createAccount");
     const verButton = document.querySelector('#verify-button');
     var form = document.getElementById("form");
-    const myaccbtn = document.querySelector('#my-account-button')
+    const myaccbtn = document.querySelector('#my-account-button');
+    const loggedForm = document.querySelector('#loginform');
+    const logoutbtn = document.querySelector('#logout-button');
 
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
@@ -56,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(firebase.auth().currentUser.emailVerified==false) {
             firebase.auth().currentUser.sendEmailVerification()
             .then(() => {
-            window.alert("Verification email has been sent.")
+            window.alert("Verification email has been sent to ")
             });
         } else {
             window.alert("Email already Verified.")
@@ -71,21 +73,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
       
-
-      //says ur logged in if your logged in
-      //displays 'my account' button if logged in
-      //resets the create acc form if logged in
+      //if logged in:
+      //says ur logged in, displays 'my account' button, resets the create acc form 
       firebase.auth().onAuthStateChanged((user) => {
           if(user) {
             setFormMessage(loginForm, "success", "You're logged in");
             myaccbtn.classList.remove("form--hidden");
             myaccbtn.classList.add("display-block");
             createAccountForm.reset();
+            loggedForm.classList.add("form--hidden");
+            logoutbtn.classList.remove("form--hidden");
           } else {
 
           }
       })
 
+
+      //logout
+      logoutbtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        auth.signOut().then(() => {
+            window.location.reload();
+        })
+      })
+    
     //forgot your password
 
 
