@@ -5,10 +5,11 @@ var shoppingCart = (function () {
     // Private methods and properties
     var cart = [];
 
-    function Item(name, price, count) {
+    function Item(name, price, count, image) {
         this.name = name
         this.price = price
         this.count = count
+        this.image = image
     }
 
     function saveCart() {
@@ -29,18 +30,19 @@ var shoppingCart = (function () {
     // Public methods and properties
     var obj = {};
 
-    obj.addItemToCart = function (name, price, count) {
+    obj.addItemToCart = function (name, price, count, image) {
         for (var i in cart) {
             if (cart[i].name === name) {
                 cart[i].count += count;
+                cart[i].image = image;
                 saveCart();
                 return;
             }
         }
 
-        console.log("addItemToCart:", name, price, count);
+        console.log("addItemToCart:", name, price, count,image);
 
-        var item = new Item(name, price, count);
+        var item = new Item(name, price, count, image);
         cart.push(item);
         saveCart();
     };
@@ -135,8 +137,9 @@ $(".add-to-cart").click(function(event){
                 event.preventDefault();
                 var name = $(this).attr("data-name");
                 var price = Number($(this).attr("data-price"));
+                var image = $(this).attr("data-jpg");
 
-                shoppingCart.addItemToCart(name, price, 1);
+                shoppingCart.addItemToCart(name, price, 1 ,image);
                 displayCart();
             });
 
@@ -225,7 +228,7 @@ if(window.location.href.match('checkout.html')!= null){
 
         for (var i in cartArray) {
             itemsWrapper.insertAdjacentHTML('beforeend',
-            `<div class="checkout-item"><a href='#'>${cartArray[i].name}</a><p>count: <span>${cartArray[i].count}</span> </p></div>`)
+            `<div class='checkout-item'><a href='#'><img src='assets/img/actual offer pics/${cartArray[i].image} '/><span>${cartArray[i].name}</span></a><p>count: <span>${cartArray[i].count}</span> </p></div>`)
         }
 
 

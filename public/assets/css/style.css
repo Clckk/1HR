@@ -3526,10 +3526,15 @@ td:last-child {
 }
 
 .checkout-item a{
+  display: flex;
   margin: 0 30px;
   font-size: 16px;
   text-decoration: none;
   color: black;
+}
+
+.checkout-item a span{
+  margin:0 20px;
 }
 
 .checkout-item p{
@@ -3539,4 +3544,9 @@ td:last-child {
 .checkout-item p span{
   color: #000;
   margin: 0;
+}
+
+.checkout-item img{
+  max-height: 120px;
+
 }
