@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.remove("form--hidden");
     });
 
+
     //verify button
     document.querySelector("#verify-button").addEventListener("click", e => {
         if(firebase.auth().currentUser.emailVerified==false) {
@@ -89,11 +90,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         auth.signInWithEmailAndPassword(logemail, logpassword).then(cred => {
             console.log(cred.user)
+            if(cred.user.emailVerified==false){
+                setFormMessage(loginForm, "error", "Verify your e-mail");
+                firebase.auth().signOut();
+            }
+            else{
+                setFormMessage(loginForm, "success", "You're now logged in");
+                myaccbtn.classList.remove("form--hidden");
+                myaccbtn.classList.add("display-block")
+                loginForm.reset();
+            }
             
-            setFormMessage(loginForm, "success", "You're now logged in");
-            myaccbtn.classList.remove("form--hidden");
-            myaccbtn.classList.add("display-block")
-            loginForm.reset();
         })
         .catch((error) => {
             setFormMessage(loginForm, "error", error.message);
@@ -127,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     loginForm.classList.remove("form--hidden");
                     createAccountForm.classList.add("form--hidden");
                     verButton.classList.remove("form--hidden");
+                    firebase.auth().currentUser.sendEmailVerification()
                     appSignUp.auth().signOut();
                     createAccountForm.reset();
                     setFormMessage(loginForm, "success", "You may now log in :)");
