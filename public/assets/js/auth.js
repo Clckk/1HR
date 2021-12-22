@@ -28,6 +28,7 @@ function clearFormMessage(formElement) {
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
+    const verButton = document.querySelector('#verify-button');
     var form = document.getElementById("form");
    
 
@@ -43,11 +44,39 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.add("form--hidden");
     });
 
+
     document.querySelector("#signupmenu").addEventListener("click", e => {
         e.preventDefault();
         loginForm.classList.add("form--hidden");
         createAccountForm.classList.remove("form--hidden");
     });
+
+    //verify button
+    document.querySelector("#verify-button").addEventListener("click", e => {
+        if(firebase.auth().currentUser.emailVerified==false) {
+        e.preventDefault();
+        firebase.auth().currentUser.sendEmailVerification()
+        .then(() => {
+           window.alert("Verification email has been sent")
+        });
+        }
+        else {
+            window.alert("Email already Verified")
+        }
+    });
+
+    firebase.auth().onAuthStateChanged((user) => {
+        if ((user)&&(firebase.auth().currentUser.emailVerified=false)) {
+            e.preventDefault();
+            verButton.classList.remove("form--hidden");
+        } else {
+            verButton.classList.add("form--hidden");
+        }
+      });
+      
+
+
+    //forgot your password
 
 
     //login on the form
@@ -56,13 +85,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const logemail = loginForm['loginEmail'].value;
         const logpassword = loginForm['loginPassword'].value;
-        const myaccbutton = document.querySelector("#my-account-button");
+        const myaccbtn = document.querySelector('#my-account-button')
 
         auth.signInWithEmailAndPassword(logemail, logpassword).then(cred => {
             console.log(cred.user)
             
             setFormMessage(loginForm, "success", "You're now logged in");
-            myaccbutton.classList.remove("form--hidden");
+            myaccbtn.classList.remove("form--hidden");
+            myaccbtn.classList.add("display-block")
             loginForm.reset();
         })
         .catch((error) => {
@@ -96,11 +126,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log(userCredential.user)
                     loginForm.classList.remove("form--hidden");
                     createAccountForm.classList.add("form--hidden");
+                    verButton.classList.remove("form--hidden");
                     appSignUp.auth().signOut();
                     createAccountForm.reset();
-
                     setFormMessage(loginForm, "success", "You may now log in :)");
-
 
                 })
                 .catch((error) => {

@@ -175,54 +175,101 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center accountpage">
+
               <h2>
-			  </h2>
-			  
-            </div>
-            <div class="tab">
-              <button class="tablinks" onclick="openCity(event, 'my-info')" id="defaultOpen">My Info</button>
-              <button class="tablinks" onclick="openCity(event, 'my-orders')">Orders</button>
-              <button class="tablinks" onclick="openCity(event, 'my-logout')">Log Out</button>
-            </div>
-            
-            <div id="my-info" class="tabcontent">
-              <h3>My Info</h3>
-              <p>Name&Surname:
-              <a>Mateusz Palka</a>
-              </p>
-              <p>AccountEmail AccountPassword AccountName Server</p>
-              <p> Username Email Password Phone number Birth Date - i to zeby sie zmienic dalo</p>
-            </div>
-            
-            <div id="my-orders" class="tabcontent">
-              <h3>Orders</h3>
-              <p></p> 
-            </div>
-            
-            <div id="my-logout" class="tabcontent">
-              <h3>Log Out</h3>
-              <p></p>
+			        </h2>
+
             </div>
 
-            <script>
-              function openCity(evt, cityName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                  tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                  tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
-              }
+            <div id="myacc-tab">
+              <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'my-info')" id="defaultOpen">My Info</button>
+                <button class="tablinks" onclick="openCity(event, 'my-orders')">Orders</button>
+                <button class="tablinks" onclick="openCity(event, 'my-logout')">Log Out</button>
+              </div>
               
-              // Get the element with id="defaultOpen" and click on it
-              document.getElementById("defaultOpen").click();
-              </script>
+              <div id="my-info" class="tabcontent">
 
+                <h3>My Info</h3>
+                <p>Name & Surname:
+                <a id="acc-name-surname">--</a>
+                </p>
+                <p>Username:
+                  <a id="acc-uname"></a>
+                  <button class="edit-button"><i class="bi bi-pen"></i> Edit</button>
+                </p>
+                <p>Email:
+                  <a id="acc-email"></a>
+                  <button class="edit-button"><i class="bi bi-pen"></i> Edit</button>
+                </p>
+                <p>Verified Email:
+                  <a id="acc-ver-email"></a>
+                  <button id="verify-button" class="edit-button"><i class="bi bi-check-all"></i> Verify</button>
+                </p>
+                <p>Password:
+                  <a id="acc-password">**************</a>
+                  <button class="edit-button"><i class="bi bi-pen"></i> Edit</button>
+                </p>
+
+                <h3 id="wot-acc">WoT Account Info</h3>
+                <p>Email:
+                  <a>--</a>
+                </p>
+                <p>Password:
+                  <a>--</a>
+                </p>
+                <p>In-game name:
+                  <a>--</a>
+                </p>
+                <p>Server:
+                  <a>--</a>
+                </p>
+
+              </div>
+              
+              <div id="my-orders" class="tabcontent">
+                <h3>Orders</h3>
+                <p></p> 
+              </div>
+              
+              <div id="my-logout" class="tabcontent">
+                    <div id="carritoacc">       
+                      <a class="" id="my-logout"><h3>Click here to Log Out</h3</a>                                      
+                    </div>
+                    
+              </div>
+
+
+              <script>
+                function openCity(evt, cityName) {
+                  var i, tabcontent, tablinks;
+                  tabcontent = document.getElementsByClassName("tabcontent");
+                  for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                  }
+                  tablinks = document.getElementsByClassName("tablinks");
+                  for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                  }
+                  document.getElementById(cityName).style.display = "block";
+                  evt.currentTarget.className += " active";
+                }
+                
+                // Get the element with id="defaultOpen" and click on it
+                document.getElementById("defaultOpen").click();
+                </script>
+
+              </div>
+
+
+              <div class="container-login" id="log-regg">
+                <form class="form" id="myacc-login"> 
+                  <p class="form__text">
+                    <a class="form__button form__text display-block" href="login-signup.html" id="linkLogin">Already have an Account?<br> Sign in here</a>
+                  </p>
+                  
+                </form>
+            </div>
 
           </div>
         </div>
@@ -346,6 +393,7 @@
 <script src="assets/js/shoppingCart.js"></script>
 <script src="assets/js/firebase-init.js"></script>
 <script src="assets/js/loginsignupMenu.js"></script>
+<script src="assets/js/my-account.js"></script>
  
 
 
