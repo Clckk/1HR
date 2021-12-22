@@ -56,9 +56,8 @@ mylogout.addEventListener('click', (e) => {
 })
 
 
-
+//verify email
 const verifybutton = document.querySelector('#verify-button');
-
 verifybutton.addEventListener('click', (e) => {
     firebase.auth().currentUser.sendEmailVerification()
     .then(() => {
