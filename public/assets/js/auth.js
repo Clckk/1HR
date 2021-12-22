@@ -67,7 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     firebase.auth().onAuthStateChanged((user) => {
-        if ((user)&&(firebase.auth().currentUser.emailVerified==false)) {
+        if ((user)&&(user.emailVerified=false)) {
+            e.preventDefault();
             verButton.classList.remove("form--hidden");
         } else {
             verButton.classList.add("form--hidden");
@@ -152,12 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         displayName: document.getElementById("signupUsername").value
                     })
     
+                    user.sendEmailVerification();
 
                     console.log(userCredential.user)
                     loginForm.classList.remove("form--hidden");
                     createAccountForm.classList.add("form--hidden");
                     verButton.classList.remove("form--hidden");
-                    firebase.auth().currentUser.sendEmailVerification()
                     appSignUp.auth().signOut();
                     createAccountForm.reset();
                     setFormMessage(loginForm, "success", "You may now log in :)");
