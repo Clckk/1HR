@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const createAccountForm = document.querySelector("#createAccount");
     const verButton = document.querySelector('#verify-button');
     var form = document.getElementById("form");
-   
+    const myaccbtn = document.querySelector('#my-account-button');
+    const loggedForm = document.querySelector('#loginform');
+    const logoutbtn = document.querySelector('#logout-button');
 
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
@@ -55,28 +57,47 @@ document.addEventListener("DOMContentLoaded", () => {
     //verify button
     document.querySelector("#verify-button").addEventListener("click", e => {
         if(firebase.auth().currentUser.emailVerified==false) {
-        e.preventDefault();
-        firebase.auth().currentUser.sendEmailVerification()
-        .then(() => {
-           window.alert("Verification email has been sent")
-        });
-        }
-        else {
-            window.alert("Email already Verified")
+            firebase.auth().currentUser.sendEmailVerification()
+            .then(() => {
+            window.alert("Verification email has been sent to ")
+            });
+        } else {
+            window.alert("Email already Verified.")
         }
     });
 
     firebase.auth().onAuthStateChanged((user) => {
-        if ((user)&&(firebase.auth().currentUser.emailVerified=false)) {
-            e.preventDefault();
+        if ((user)&&(firebase.auth().currentUser.emailVerified==false)) {
             verButton.classList.remove("form--hidden");
         } else {
             verButton.classList.add("form--hidden");
         }
       });
       
+      //if logged in:
+      //says ur logged in, displays 'my account' button, resets the create acc form 
+      firebase.auth().onAuthStateChanged((user) => {
+          if(user) {
+            setFormMessage(loginForm, "success", "You're logged in");
+            myaccbtn.classList.remove("form--hidden");
+            myaccbtn.classList.add("display-block");
+            createAccountForm.reset();
+            loggedForm.classList.add("form--hidden");
+            logoutbtn.classList.remove("form--hidden");
+          } else {
+
+          }
+      })
 
 
+      //logout
+      logoutbtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        auth.signOut().then(() => {
+            window.location.reload();
+        })
+      })
+    
     //forgot your password
 
 
@@ -86,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const logemail = loginForm['loginEmail'].value;
         const logpassword = loginForm['loginPassword'].value;
-        const myaccbtn = document.querySelector('#my-account-button')
+        
 
         auth.signInWithEmailAndPassword(logemail, logpassword).then(cred => {
             console.log(cred.user)
@@ -101,6 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 loginForm.reset();
             }
             
+            setFormMessage(loginForm, "success", "You're now logged in");
+            loginForm.reset();
         })
         .catch((error) => {
             setFormMessage(loginForm, "error", error.message);
