@@ -59,10 +59,14 @@ mylogout.addEventListener('click', (e) => {
 //verify email
 const verifybutton = document.querySelector('#verify-button');
 verifybutton.addEventListener('click', (e) => {
-    firebase.auth().currentUser.sendEmailVerification()
-    .then(() => {
-       window.alert("Verification email has been sent")
-    });
+    if(firebase.auth().currentUser.emailVerified==false) {
+        firebase.auth().currentUser.sendEmailVerification()
+        .then(() => {
+        window.alert("Verification email has been sent.")
+        });
+    } else {
+        window.alert("Email already Verified.")
+    }
 })
 
  
