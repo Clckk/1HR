@@ -55,39 +55,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     //verify button
-    document.querySelector("#verify-button").addEventListener("click", e => {
-        if(firebase.auth().currentUser.emailVerified==false) {
-            firebase.auth().currentUser.sendEmailVerification()
-            .then(() => {
-            window.alert("Verification email has been sent to ")
-            });
-        } else {
-            window.alert("Email already Verified.")
-        }
-    });
 
-    firebase.auth().onAuthStateChanged((user) => {
-        if ((user)&&(user.emailVerified=false)) {
-            e.preventDefault();
-            verButton.classList.remove("form--hidden");
-        } else {
-            verButton.classList.add("form--hidden");
-        }
-      });
       
       //if logged in:
       //says ur logged in, displays 'my account' button, resets the create acc form 
       firebase.auth().onAuthStateChanged((user) => {
           if(user) {
-            setFormMessage(loginForm, "success", "You're logged in");
-            myaccbtn.classList.remove("form--hidden");
-            myaccbtn.classList.add("display-block");
-            createAccountForm.reset();
-            loggedForm.classList.add("form--hidden");
-            logoutbtn.classList.remove("form--hidden");
-          } else {
-
-          }
+              if (user.emailVerified==true) {
+                  setFormMessage(loginForm, "success", "You're logged in");
+                  myaccbtn.classList.remove("form--hidden");
+                  myaccbtn.classList.add("display-block");
+                  createAccountForm.reset();
+                  loggedForm.classList.add("form--hidden");
+                  logoutbtn.classList.remove("form--hidden");
+                  verButton.classList.add("form--hidden");
+              }
+              else {
+                  verButton.classList.remove("form--hidden");
+                  document.querySelector("#verify-button").addEventListener("click", e => {
+                    user.sendEmailVerification()
+                    .then(() => {
+                    window.alert("Verification email has been sent to ")
+                    });
+            });
+            }
+         } 
       })
 
 
@@ -115,15 +107,18 @@ document.addEventListener("DOMContentLoaded", () => {
             if(cred.user.emailVerified==false){
                 setFormMessage(loginForm, "error", "Verify your e-mail");
                 firebase.auth().signOut();
+                console.log("ZALOGOWANY ALE NIMA VERIFY");
             }
             else{
+                
                 setFormMessage(loginForm, "success", "You're now logged in");
                 myaccbtn.classList.remove("form--hidden");
                 myaccbtn.classList.add("display-block")
                 loginForm.reset();
+                // window.location.reload();
+
             }
             
-            setFormMessage(loginForm, "success", "You're now logged in");
             loginForm.reset();
         })
         .catch((error) => {
@@ -153,15 +148,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         displayName: document.getElementById("signupUsername").value
                     })
     
-                    user.sendEmailVerification();
+                    user.sendEmailVerification().then(() => {
+                        window.alert(`Verification email has been sent to ${user.email} `)
+                    });
 
                     console.log(userCredential.user)
                     loginForm.classList.remove("form--hidden");
                     createAccountForm.classList.add("form--hidden");
-                    verButton.classList.remove("form--hidden");
                     appSignUp.auth().signOut();
                     createAccountForm.reset();
-                    setFormMessage(loginForm, "success", "You may now log in :)");
+                    setFormMessage(loginForm, "success", "Account created, please verify your email");
 
                 })
                 .catch((error) => {

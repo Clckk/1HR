@@ -3539,6 +3539,7 @@ td:last-child {
 
 .checkout-item p{
   margin: 0;
+  flex-shrink: 0;
 }
 
 .checkout-item p span{
