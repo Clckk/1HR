@@ -28,11 +28,13 @@ function clearFormMessage(formElement) {
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
+    const forgotPasswordForm = document.querySelector("#forgotPassword")
     const verButton = document.querySelector('#verify-button');
     var form = document.getElementById("form");
     const myaccbtn = document.querySelector('#my-account-button');
     const loggedForm = document.querySelector('#loginform');
     const logoutbtn = document.querySelector('#logout-button');
+    const resetpasswordbtn = document.querySelector('#resetPassword');
 
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
@@ -54,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    //verify button
+  
 
       
       //if logged in:
@@ -70,12 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
                   logoutbtn.classList.remove("form--hidden");
                   verButton.classList.add("form--hidden");
               }
+              //if logged out
               else {
                   verButton.classList.remove("form--hidden");
                   document.querySelector("#verify-button").addEventListener("click", e => {
                     user.sendEmailVerification()
                     .then(() => {
-                    window.alert("Verification email has been sent to ")
+                        window.alert(`Verification email has been sent to ${user.email} `)
                     });
             });
             }
@@ -92,6 +95,31 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     
     //forgot your password
+    document.querySelector("#forgotpasswordlink").addEventListener("click", e => {
+        e.preventDefault();
+        loginForm.classList.add("form--hidden");
+        createAccountForm.classList.add("form--hidden");
+        forgotPasswordForm.classList.remove("form--hidden");
+    })
+
+    resetpasswordbtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+       var resetemail = $("#resetEmail").val();
+       if(resetemail != "") {
+            auth.sendPasswordResetEmail(resetemail).then(function() 
+            {
+                window.alert("Email has been sent. Please check your mailbox and verify then refresh the page.")
+            })
+            .catch(function(error) {
+                var errorMessage = error.message;
+                window.alert("Message : " + errorMessage);
+            })
+        } else {
+            window.alert("Please input Your email adress first.")
+        }
+        
+        })
 
 
     //login on the form
@@ -105,11 +133,9 @@ document.addEventListener("DOMContentLoaded", () => {
         auth.signInWithEmailAndPassword(logemail, logpassword).then(cred => {
             console.log(cred.user)
             if(cred.user.emailVerified==false){
-                setFormMessage(loginForm, "error", "Verify your e-mail");
+                setFormMessage(loginForm, "error", "Verify your e-mail first then try logging in.");
                 firebase.auth().signOut();
-                console.log("ZALOGOWANY ALE NIMA VERIFY");
-            }
-            else{
+            } else {
                 
                 setFormMessage(loginForm, "success", "You're now logged in");
                 myaccbtn.classList.remove("form--hidden");
@@ -157,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     createAccountForm.classList.add("form--hidden");
                     appSignUp.auth().signOut();
                     createAccountForm.reset();
-                    setFormMessage(loginForm, "success", "Account created, please verify your email");
+                    setFormMessage(loginForm, "success", "Account created, please verify your email now");
 
                 })
                 .catch((error) => {
