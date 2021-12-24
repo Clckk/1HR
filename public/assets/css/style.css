@@ -3479,7 +3479,7 @@ td:last-child {
 
   text-align: left;
   padding: 0rem 1rem;
-
+  
   font-size: 0.9rem;
   color: #ffffff;
   border: none;
@@ -3487,6 +3487,10 @@ td:last-child {
   outline: none;
   cursor: pointer;
   background: #009579;
+}
+
+.edit-button:active {
+  transform: scale(0.98);
 }
 
 #myacc-tab h3{
