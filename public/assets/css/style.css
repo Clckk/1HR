@@ -155,8 +155,17 @@ body {
   .section-headline h2 {
     font-size: 25px!important;  
   }
+  .about-background p {
+    font-size: 14px;
+  }
   .accordion-title {
     font-size: 1rem;
+  }
+  #pricing p {
+    font-size: 0.9rem;
+  }
+  .about-background {
+    padding: 30px 20px!important;
   }
   .contact-right-text h5 {
     font-size: 13px!important;
@@ -819,9 +828,10 @@ div#preloader {
 .about-background {
   color:white;
   font-size: 17px;
+  font-weight: 700;
   background-color:black;
   background:rgba(0,0,0,0.6);
-  padding:60px 50px;
+  padding:40px 30px;
 	border-radius: 10px;
 }
 
@@ -1467,7 +1477,11 @@ div#preloader {
 
 #pricing p{
   color: rgb(255, 240, 240);
-  font-family: 'Hind', sans-serif; 
+  font-family: 'Hind', sans-serif;
+  background: rgba(0,0,0,0.6);
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 20px; 
 }
 
 
