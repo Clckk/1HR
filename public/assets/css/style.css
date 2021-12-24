@@ -180,6 +180,12 @@ body {
   }
 }
 
+@media (min-width: 600px) {
+  .aboutus-area {
+    padding: 0px 4vh;
+  }
+}
+
 
 .area-padding {
   padding: 0px 0px 80px;
@@ -776,7 +782,6 @@ div#preloader {
   border-radius: 25px; 
   border: 5px solid;
   border-color: black;
-  padding:10px;
 }
 
 .about-area {
