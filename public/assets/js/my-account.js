@@ -25,7 +25,31 @@ firebase.auth().onAuthStateChanged((user) => {
 
         accuname.innerHTML = `${displayName}`;
         accemail.innerHTML = `${email}`
-        accemailver.innerHTML = `${emailver}`
+        //accemailver.innerHTML = `${emailver}`         ZAKOMENTOWANE BO BYŁ ERROR, NIMA TEGO W HTML
+
+        var orderNum = 0;
+        const ordersWrapper = document.getElementById('orders-wrapper');
+        OrderTable =[];
+        db.ref('users/' + firebase.auth().currentUser.uid +'/Orders').get().then((snapshot) => {
+            orderNum=snapshot.val();
+            for (let i = 1; i <= orderNum; i++) {
+                ordersWrapper.insertAdjacentHTML('beforeend',
+                `<div class='order-el'><div>Order id: #${i}</div><div class="order-el-date"> </div></div>`)
+                var orderWrapper = document.getElementsByClassName('order-el');
+                var orderDate = document.getElementsByClassName('order-el-date');
+
+                db.ref('users/' + firebase.auth().currentUser.uid + '/' + i).get().then((snapshot) => {
+                    OrderTable = snapshot.val();
+                    orderDate[i-1].innerHTML = `Date: ${OrderTable.Date}`
+                    OrderTable = Object.values(OrderTable);
+                    for (let j=0; j< OrderTable.length -1 ;j++) {               //te -1 jest po to æeby nie próbowoaøo zczytac 'Title' z Daty
+                        orderWrapper[i-1].insertAdjacentHTML('beforeend',
+                        `<div><a href='#'><span>${OrderTable[j].Title}</span></a></div>`)
+                    }
+                });
+                
+            }
+        });
 
        
     } else {
