@@ -119,4 +119,8 @@ verifybutton.addEventListener('click', (e) => {
 //       });
 
 
+    $('.modal_custom1').hide()
+    $('#edit-acc-uname').on('click',function(){$('.modal_custom1').fadeIn(100)}); 
+    $('.modal_custom1').on('click',function(){$('.modal_custom1').fadeOut(100)})
+
 })
