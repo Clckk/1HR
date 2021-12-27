@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged((user) => {
         myacctab.classList.remove("form--hidden");
         myacclogin.classList.add("form--hidden");
 
-        var uid = user.uid; //przypisuje id
+        var uid = user.uid;
         const displayName = user.displayName;
         const email = user.email;
         const emailver = user.emailVerified;
