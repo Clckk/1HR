@@ -3512,6 +3512,11 @@ td:last-child {
   padding-top: 20px;
 }
 
+.order-el{
+  padding: 10px;
+  border-top: 1px solid gray;
+}
+
 
 
 

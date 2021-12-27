@@ -230,11 +230,30 @@ if(window.location.href.match('checkout.html')!= null){
             itemsWrapper.insertAdjacentHTML('beforeend',
             `<div class='checkout-item'><a href='#'><img src='assets/img/actual offer pics/${cartArray[i].image} '/><span>${cartArray[i].name}</span></a><p>count: <span>${cartArray[i].count}</span> </p></div>`)
         }
-
-
-
+        const orderBtn= document.getElementById("order_btn");
+        var orderNum = 0;
+        
+        orderBtn.addEventListener('click',function(){
+            db.ref('users/' + firebase.auth().currentUser.uid +'/Orders').get().then((snapshot) => {
+                orderNum=snapshot.val();
+                for (var i in cartArray){
+                    db.ref('users/' + firebase.auth().currentUser.uid +'/'+ (orderNum +1) +'/'+ i).set({
+                        Title:  cartArray[i].name,
+                
+                    })
+                }
+                let timestamp = new Date().toJSON().slice(0,16).replace(/-/g,'/').replace(/T/g,' ');
+                db.ref('users/' + firebase.auth().currentUser.uid + '/' + (orderNum +1) ).update({
+                    Date: timestamp,
+                });
+                db.ref('users/' + firebase.auth().currentUser.uid).update({
+                    Orders: orderNum+1,
+                });
+            console.log('Order added in db')
+            });
+        // TU FUNKCJE CZYSZCZACE KOSZYK ITP
+        })
     })                            
-
 }
 
 

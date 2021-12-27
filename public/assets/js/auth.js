@@ -179,6 +179,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
 
                     console.log(userCredential.user)
+
+                    db.ref('users/' + user.uid).set({
+                        Orders: 0,
+                    });
+
                     loginForm.classList.remove("form--hidden");
                     createAccountForm.classList.add("form--hidden");
                     appSignUp.auth().signOut();
