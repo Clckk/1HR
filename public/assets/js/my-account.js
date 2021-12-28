@@ -1,3 +1,28 @@
+function setFormMessage(formElement, type, message) {
+    const messageElement = formElement.querySelector(".form__message");
+
+    messageElement.textContent = message;
+    messageElement.classList.remove("form__message--success", "form__message--error");
+    messageElement.classList.add(`form__message--${type}`);
+}
+
+function setInputError(inputElement, message) {
+    inputElement.classList.add("form__input--error");
+    inputElement.parentElement.querySelector(".form__input-error-message").textContent = message;
+}
+
+function clearInputError(inputElement) {
+    inputElement.classList.remove("form__input--error");
+    inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
+}
+
+function clearFormMessage(formElement) {
+    inputElement.classList.remove("form__message--error");
+    inputElement.parentElement.querySelector(".form__message--error").textContent = "";
+}
+
+
+
 document.addEventListener("DOMContentLoaded", () => { 
 
 const myacctab = document.querySelector('#myacc-tab')
@@ -98,29 +123,67 @@ verifybutton.addEventListener('click', (e) => {
 
 
 
-//   const user = firebase.auth().currentUser;
-//     user.updateProfile({
-//     displayName: "Jane Q. User",
-//     photoURL: "https://example.com/jane-q-user/profile.jpg"
-//     }).then(() => {
-//     // Update successful
-//     // ...
-//     }).catch((error) => {
-//     // An error occurred
-//     // ...
-//     }); 
-    
-//     user.updateEmail("user@example.com").then(() => {
-//         // Update successful
-//         // ...
-//       }).catch((error) => {
-//         // An error occurred
-//         // ...
-//       });
+
+    $('.modal').hide()
+    $('#edit-acc-uname').on('click',function(){$('#modal_2').fadeIn(100)}); 
+  
+    // var editUname = document.getElementById('edit_uname');
+
+    // document.addEventListener('click', function(event) {
+    //     var isClickInsideElement = editUname.contains(event.target);
+    //     if (!isClickInsideElement) {
+    //         $('.modal').fadeOut(100)
+    //     }
+    // });
+
+    const editUname = document.querySelector("#edit_uname");
+    editUname.addEventListener("submit", e => {
+        e.preventDefault();
+
+        const user = firebase.auth().currentUser;
+        var changedUsername = document.getElementById("changed_username").value
+        
+        user.updateProfile({
+        displayName: (changedUsername),
+        }).then(() => {
+            
+            setFormMessage(editUname, "success", "Username changed successfully");
+
+        }).catch((error) => {
+            setFormMessage(editUname, "error", error.message);
+        }); 
+    });
 
 
-    $('.modal_custom1').hide()
-    $('#edit-acc-uname').on('click',function(){$('.modal_custom1').fadeIn(100)}); 
-    $('.modal_custom1').on('click',function(){$('.modal_custom1').fadeOut(100)})
+    $('#edit-acc-email').on('click',function(){$('#modal_3').fadeIn(100)}); 
+    const editEmail = document.querySelector("#edit_email");
+    editEmail.addEventListener("submit", e => {
+        e.preventDefault();
+
+        const user = firebase.auth().currentUser;
+        var changedEmail = document.getElementById("changed_email").value
+
+        user.updateEmail(changedEmail)
+        .then(() => {
+            
+            setFormMessage(editEmail, "success", "Email adress changed successfully");
+
+        }).catch((error) => {
+            setFormMessage(editEmail, "error", error.message);
+
+        });
+    });
+
+    document.querySelectorAll(".form__input").forEach(inputElement => {
+        inputElement.addEventListener("blur", e => {
+            if (e.target.id === "changed_username" && e.target.value.length > 0 && e.target.value.length < 4) {
+                setInputError(inputElement, "Username must be at least 4 characters in length");
+            }
+        });
+        inputElement.addEventListener("input", e => {
+            document.getElementById("AccMainErr").textContent = '';
+            clearInputError(inputElement);
+        });
+    });
 
 })

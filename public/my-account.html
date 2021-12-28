@@ -37,7 +37,38 @@
 </head>
 
 <body>
-  <div class="modal_custom1"><div class="modal-content_custom1"></div></div>
+
+
+  <!-- ====== Modals ====== -->
+  <div id="modal_2" class="modal">
+    <div id="edit_uname" class="modal-content">
+      <form class="form">
+        <h1 class="form__title">Edit Username</h1>
+        <div id="AccMainErr" class="form__message form__message--error"></div>
+        <div class="form__input-group">
+            <input type="text" id="changed_username" class="form__input"  autofocus placeholder="New Username">
+            <div class="form__input-error-message"></div>
+        </div>
+        <button class="form__button btn yellow darken-2 z-depth-0" type="submit">Change</button>
+    </form>
+    </div>
+  </div>
+
+  <div id="modal_3" class="modal">
+    <div id="edit_email" class="modal-content">
+      <form class="form">
+        <h1 class="form__title">Edit Your Email adress</h1>
+        <div id="AccMainErr" class="form__message form__message--error"></div>
+        <div class="form__input-group">
+            <input type="text" id="changed_email" class="form__input"  autofocus placeholder="New Email adress">
+            <div class="form__input-error-message"></div>
+        </div>
+        <button class="form__button btn yellow darken-2 z-depth-0" type="submit">Change</button>
+    </form>
+    </div>
+  </div>
+
+
   <div>
     <video autoplay loop muted fixed class="video-background">
       <source src="particles.mp4" type="video/mp4">
@@ -197,11 +228,11 @@
                 </p>
                 <p>Username:
                   <a id="acc-uname"></a>
-                  <button class="edit-button"><i class="bi bi-pen"></i> Edit</button>
+                  <button id="edit-acc-uname" class="edit-button"><i class="bi bi-pen"></i> Edit</button>
                 </p>
                 <p>Email:
                   <a id="acc-email"></a>
-                  <button class="edit-button"><i class="bi bi-pen"></i> Edit</button>
+                  <button id="edit-acc-email" class="edit-button"><i class="bi bi-pen"></i> Edit</button>
                 </p>
                 <p>Verified Email:
                   <button id="verify-button" class="edit-button"><i class="bi bi-check-all"></i> Verified</button>
