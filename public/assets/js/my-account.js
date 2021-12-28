@@ -179,4 +179,21 @@ verifybutton.addEventListener('click', (e) => {
         });
     });
 
+    
+    // If user clicks outside the modal window, then close modal by calling closeModal()
+    document.addEventListener(
+        "click",
+        function(event) {
+          if (
+            event.target.closest(".modal") && !event.target.closest(".modal-content")
+          ) {
+            closeModal()
+          }
+        },
+        false
+      )
+      function closeModal() {
+        $('.modal').fadeOut(100);
+      }
+
 })
