@@ -126,6 +126,7 @@ verifybutton.addEventListener('click', (e) => {
 
     $('.modal').hide()
     $('#edit-acc-uname').on('click',function(){$('#modal_2').fadeIn(100)}); 
+    $('#edit-acc-uname').closest().on('click',function(){$('#modal_2').fadeIn(100)})
 
     const editUname = document.querySelector("#edit_uname");
     editUname.addEventListener("submit", e => {

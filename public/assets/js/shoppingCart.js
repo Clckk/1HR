@@ -227,8 +227,9 @@ if(window.location.href.match('checkout.html')!= null){
         
 
         for (var i in cartArray) {
+            let url = cartArray[i].image.replace('jpg','html');
             itemsWrapper.insertAdjacentHTML('beforeend',
-            `<div class='checkout-item'><a href='#'><img src='assets/img/actual offer pics/${cartArray[i].image} '/><span>${cartArray[i].name}</span></a><p>count: <span>${cartArray[i].count}</span> </p></div>`)
+            `<div class='checkout-item'><a href='./${url}'><img src='assets/img/actual offer pics/${cartArray[i].image} '/><span>${cartArray[i].name}</span></a><p>count: <span>${cartArray[i].count}</span> </p></div>`)
         }
         const orderBtn= document.getElementById("order_btn");
         var orderNum = 0;
