@@ -3116,7 +3116,7 @@ td:last-child {
   padding: 20px;
   min-height: 200px;
   min-width: 300px;
-  border:3px solid rgb(11, 196, 199);
+  border:3px solid rgb(77 89 116)
 }
 }
 
@@ -3145,7 +3145,7 @@ td:last-child {
   background-color: rgb(243, 243, 243);
   min-height: 125px;
   min-width: 200px;
-  border:3px solid rgb(11, 196, 199);
+  border:3px solid rgb(77 89 116);
   margin-left: -80px;
 }
 }
@@ -3623,5 +3623,9 @@ td:last-child {
   }
 
   .modal .form__message--error {
+    color: #ff3333;
+  }
+
+  .modal .form__input-error-message {
     color: #ff3333;
   }

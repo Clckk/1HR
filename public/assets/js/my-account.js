@@ -126,15 +126,6 @@ verifybutton.addEventListener('click', (e) => {
 
     $('.modal').hide()
     $('#edit-acc-uname').on('click',function(){$('#modal_2').fadeIn(100)}); 
-  
-    // var editUname = document.getElementById('edit_uname');
-
-    // document.addEventListener('click', function(event) {
-    //     var isClickInsideElement = editUname.contains(event.target);
-    //     if (!isClickInsideElement) {
-    //         $('.modal').fadeOut(100)
-    //     }
-    // });
 
     const editUname = document.querySelector("#edit_uname");
     editUname.addEventListener("submit", e => {
@@ -143,17 +134,18 @@ verifybutton.addEventListener('click', (e) => {
         const user = firebase.auth().currentUser;
         var changedUsername = document.getElementById("changed_username").value
         
-        user.updateProfile({
-        displayName: (changedUsername),
-        }).then(() => {
-            
-            setFormMessage(editUname, "success", "Username changed successfully");
+        if(changedUsername.length > 3) {
+            user.updateProfile({
+            displayName: (changedUsername),
+            }).then(() => {
+                
+                setFormMessage(editUname, "success", "Username changed successfully");
 
-        }).catch((error) => {
-            setFormMessage(editUname, "error", error.message);
-        }); 
+            }).catch((error) => {
+                setFormMessage(editUname, "error", error.message);
+            }); 
+        }
     });
-
 
     $('#edit-acc-email').on('click',function(){$('#modal_3').fadeIn(100)}); 
     const editEmail = document.querySelector("#edit_email");
@@ -174,6 +166,8 @@ verifybutton.addEventListener('click', (e) => {
         });
     });
 
+
+
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "changed_username" && e.target.value.length > 0 && e.target.value.length < 4) {
@@ -181,7 +175,6 @@ verifybutton.addEventListener('click', (e) => {
             }
         });
         inputElement.addEventListener("input", e => {
-            document.getElementById("AccMainErr").textContent = '';
             clearInputError(inputElement);
         });
     });
