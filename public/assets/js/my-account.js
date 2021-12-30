@@ -122,12 +122,11 @@ verifybutton.addEventListener('click', (e) => {
 
 
 
-
-
+//MODALS//
     $('.modal').hide()
-    $('#edit-acc-uname').on('click',function(){$('#modal_2').fadeIn(100)}); 
-    $('#edit-acc-uname').closest().on('click',function(){$('#modal_2').fadeIn(100)})
 
+
+    $('#edit-acc-uname').on('click',function(){$('#modal_2').fadeIn(100)}); 
     const editUname = document.querySelector("#edit_uname");
     editUname.addEventListener("submit", e => {
         e.preventDefault();
@@ -168,7 +167,7 @@ verifybutton.addEventListener('click', (e) => {
     });
 
 
-
+    //modal errors
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "changed_username" && e.target.value.length > 0 && e.target.value.length < 4) {
@@ -181,7 +180,7 @@ verifybutton.addEventListener('click', (e) => {
     });
 
     
-    // If user clicks outside the modal window, then close modal by calling closeModal()
+    //if the user clicks outside the modal window, then close modal by calling closeModal()
     document.addEventListener(
         "click",
         function(event) {
