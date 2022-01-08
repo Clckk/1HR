@@ -155,13 +155,16 @@ $(".add-to-cart").click(function(event){
 
 					
                 for (var i in cartArray) {
+                    let url = cartArray[i].image.replace('jpg','html');
+
                     output += "<tr><th class='cart_item-name' >"
                         +cartArray[i].name
+                        +`<div class='checkout-item'><a href='./${url}'><img src='assets/img/actual offer pics/${cartArray[i].image} '/></div>`
                         +" </th><th><input class='item-count' style='width:55px;text-align: right;padding-left:10px; ' type='number' disabled data-name='"
                         +cartArray[i].name
                         +"' value='"+cartArray[i].count+"' >"
 						//+"  </th><th style='padding-left:10px;padding-right:10px;'>$"+cartArray[i].price
-                        +" </th><th>$"+cartArray[i].total
+                        +" </th><th>€"+cartArray[i].total
 						+" </th><th><button class='plus-item' data-name='"
                         +cartArray[i].name+"'>+</button>"
                         +" </th><th><button class='subtract-item' data-name='"
@@ -251,6 +254,8 @@ if(window.location.href.match('checkout.html')!= null){
                     Orders: orderNum+1,
                 });
             console.log('Order added in db')
+            shoppingCart.clearCart();
+            window.location.reload();
             });
         // TU FUNKCJE CZYSZCZACE KOSZYK ITP
         })

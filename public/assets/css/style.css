@@ -3140,6 +3140,7 @@ td:last-child {
 .submenu:hover #carritoacc{
   display: block;
   position: absolute;
+  right: 0;
   top:100%;
   z-index: 1;
   background-color: rgb(243, 243, 243);
